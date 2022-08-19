@@ -1,10 +1,10 @@
 import React from "react";
-import Button from '@mui/material/Button';
+
 const OperationArea = () =>{
     return(
         <div>
-            <Button>Upload Patient Data</Button>
-            <Button>Search Protein</Button>
+            <button>Upload Patient Data</button>
+            <button>Search Protein</button>
             {/* <h3>OperationArea</h3> */}
         </div>
     )
