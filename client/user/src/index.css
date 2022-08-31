@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Karla:wght@200&display=swap');
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Poppins'
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Global styles*/
+:root {
+  --title-font: 'Kanit', sans-serif;
+  --title-size: 50px;
+  --footer-font: 'Karla', sans-serif;
+  --primary-gradient: linear-gradient(90deg, rgba(33,75,4,1) 0%, rgba(91,121,9,1) 35%);
+  --primary-background: rgba(91,121,9,1);
 }
