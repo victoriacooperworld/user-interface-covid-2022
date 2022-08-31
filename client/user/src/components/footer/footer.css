@@ -1,0 +1,18 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background: var(--primary-background);
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.authors {
+    font-family: var(--footer-font);
+}
+
+.company {
+    font-family: var(--footer-font);
+}
