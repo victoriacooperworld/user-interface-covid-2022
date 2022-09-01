@@ -1,0 +1,49 @@
+.operations {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.operations form {
+  background: var(--form-gradient);
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.fileupload {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.proteinsearch {
+  display: flex;
+  row-gap: 30px;
+  flex-direction: column;
+  align-items: center; /* removes default stretch-to-fit parent div*/
+  justify-content: center;
+}
+
+.textfield {
+  width: clamp(100px, 300px, 500px);
+  height: 30px;
+  font-size: 18px;
+}
+
+.button {
+  padding: 10px 30px;
+  border: 2px solid transparent;
+  background: var(--secondary-background);
+  font-family: var(--primary-font);
+  font-size: var(--button-text-size);
+}
+
+.button:hover {
+  border: 3px solid lightskyblue;
+}
