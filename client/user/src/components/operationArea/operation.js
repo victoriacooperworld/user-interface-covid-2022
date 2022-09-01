@@ -94,8 +94,8 @@ const OperationArea = () =>{
                 <button className="button" type="submit" >Upload Patient Data</button>
             </form>
             
-           <form className="proteinsearch" placeholder="Enter protein" onSubmit = {SearchProtein}>
-                <input className="textfield" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
+           <form className="proteinsearch" onSubmit = {SearchProtein}>
+                <input className="textfield" placeholder="Enter protein" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
                 <button className="button" type="submit">Search Protein</button>
            </form> 
            
