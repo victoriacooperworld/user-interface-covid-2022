@@ -83,19 +83,19 @@ const OperationArea = () =>{
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked ? (
                     <div className="fileinfo">
-                        <p>Filename: {file.name}</p>
-                        <p>Filetype: {file.type}</p>
-                        <p>Size: {file.size}</p>
+                        <p>Name: {file.name}</p>
+                        <p>Type: {file.type}</p>
+                        <p>Size: {parseInt(file.size / 100000)}kb</p>
                     </div>
                 ): (
-                    <p>Select File</p>
+                    <p></p>
                 )}
 
                 <button className="button" type="submit" >Upload Patient Data</button>
             </form>
             
-           <form className="proteinsearch" placeholder="Enter protein" onSubmit = {SearchProtein}>
-                <input className="textfield" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
+           <form className="proteinsearch" onSubmit = {SearchProtein}>
+                <input className="textfield" placeholder="Enter protein" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
                 <button className="button" type="submit">Search Protein</button>
            </form> 
            
