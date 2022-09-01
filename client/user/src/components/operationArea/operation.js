@@ -83,12 +83,12 @@ const OperationArea = () =>{
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked ? (
                     <div className="fileinfo">
-                        <p>Filename: {file.name}</p>
-                        <p>Filetype: {file.type}</p>
-                        <p>Size: {file.size}</p>
+                        <p>Name: {file.name}</p>
+                        <p>Type: {file.type}</p>
+                        <p>Size: {parseInt(file.size / 100000)}kb</p>
                     </div>
                 ): (
-                    <p>Select File</p>
+                    <p></p>
                 )}
 
                 <button className="button" type="submit" >Upload Patient Data</button>
