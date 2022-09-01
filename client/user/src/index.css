@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Karla:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 /* Global styles*/
 :root {
   --title-font: 'Kanit', sans-serif;
-  --title-size: 50px;
   --footer-font: 'Karla', sans-serif;
+  --primary-font: 'Inter', sans-serif;
+  --title-size: 50px;
+  --button-text-size: 20px;
   --primary-gradient: linear-gradient(90deg, rgba(33,75,4,1) 0%, rgba(91,121,9,1) 35%);
-  --primary-background: rgba(91,121,9,1);
+  --form-gradient: linear-gradient(90deg, rgba(243, 243, 249, 1) 0%, rgba(251, 245, 245, 1) 100%);
+  --primary-background: rgba(91, 121, 9, 1);
+  --secondary-background: rgba(51, 128, 48, 1);
+  --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

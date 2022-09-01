@@ -1,9 +1,12 @@
 import {React, useState} from "react";
+import './operation.css';
 
 const OperationArea = () =>{
-    const [filePath, setFilePath] = useState("")
-    const [searchProt, setSearchProt] = useState("")
+    const [file, setFile] = useState();
+    const [filePicked, setFilePicked] = useState(false);
+    const [searchProt, setSearchProt] = useState("");
 
+    /* 
     const sendFilePath = event =>{
         event.preventDefault();
         console.log(filePath)
@@ -34,7 +37,20 @@ const OperationArea = () =>{
             
         }
     }
+    */
 
+    /* Displays uploaded file information to user */
+    const fileChangeHandler = (event) => {
+        setFile(event.target.files[0]);
+        setFilePicked(true);
+    };
+
+    /* Handles file submission to server */
+    const fileSubmitHandler = (event) => {
+        //TODO:
+    };
+
+    /* Hanldes submission of text entered in protein search */
     const SearchProtein = event => {
         event.preventDefault();
         try{
@@ -57,16 +73,30 @@ const OperationArea = () =>{
             console.log(err)
         }
     }
+
+
     return(
-        <div>
-            <form onSubmit = {sendFilePath}>
-                <input type = 'text' onChange={(e) => setFilePath(e.target.value)}></input>
-                <button type="submit" >Upload Patient Data</button>
+        <div className="operations">
+            <form className="fileupload" onSubmit = {fileSubmitHandler}>
+                <input className="upload" type = 'file' onChange={fileChangeHandler}></input>
+
+                {/* Render conditionally if file is chosen or not chosen */}
+                {filePicked ? (
+                    <div className="fileinfo">
+                        <p>Filename: {file.name}</p>
+                        <p>Filetype: {file.type}</p>
+                        <p>Size: {file.size}</p>
+                    </div>
+                ): (
+                    <p>Select File</p>
+                )}
+
+                <button className="button" type="submit" >Upload Patient Data</button>
             </form>
             
-           <form onSubmit = {SearchProtein}>
-                <input type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
-                <button type="submit">Search Protein</button>
+           <form className="proteinsearch" placeholder="Enter protein" onSubmit = {SearchProtein}>
+                <input className="textfield" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
+                <button className="button" type="submit">Search Protein</button>
            </form> 
            
             {/* <h3>OperationArea</h3> */}

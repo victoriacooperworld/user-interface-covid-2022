@@ -1,5 +1,4 @@
 import './App.css';
-import Author from './components/author/author';
 import OperationArea from './components/operationArea/operation';
 import TetramerGet from './components/TetramerGet';
 import Navbar from './components/navbar/Navbar';
@@ -10,7 +9,6 @@ function App() {
 
     <div className="App">
       <Navbar/>
-      <Author/>
       <OperationArea/>
       <TetramerGet/>
       <Footer/>
