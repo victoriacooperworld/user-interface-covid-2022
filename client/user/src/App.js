@@ -1,15 +1,20 @@
 import './App.css';
-import Author from './components/author/author';
 import OperationArea from './components/operationArea/operation';
+import TetramerGet from './components/TetramerGet';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <Author/>
-      <OperationArea/>
-    
 
+    <div className="App">
+      <Navbar/>
+      <OperationArea/>
+      <TetramerGet/>
+      <Footer/>
     </div>
+
+
   );
 }
 

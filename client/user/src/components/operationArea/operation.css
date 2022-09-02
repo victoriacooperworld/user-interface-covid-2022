@@ -1,0 +1,67 @@
+
+/* Button styles */
+.button {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  border: 3px solid transparent;
+  background: var(--secondary-background);
+  font-family: var(--primary-font);
+  font-size: var(--button-text-size);
+}
+
+.button:hover {
+  border: 3px solid lightskyblue;
+}
+
+/* Container for search and upload patient data cards */
+.operations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 50px;
+  height: 210px;
+  width: 100%;
+}
+
+.operations form {
+  background: var(--form-gradient);
+  box-shadow: var(--shadow);
+  padding: 0px 20px;
+}
+
+/* Upload patient data styles */
+.fileupload {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.fileinfo {
+  background: beige;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/* Protein search styles */
+.proteinsearch {
+  display: flex;
+  row-gap: 30px;
+  flex-direction: column;
+  align-items: center; /* removes default stretch-to-fit parent div*/
+  justify-content: center;
+}
+
+.textfield {
+  margin-top: 20px;
+  width: clamp(100px, 300px, 500px);
+  height: 30px;
+  font-size: 18px;
+}

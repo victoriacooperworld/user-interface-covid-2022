@@ -1,0 +1,13 @@
+
+.navbar {
+    background: var(--primary-gradient);
+    padding: 40px 0px;
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.navbar h2 {
+    font-family: var(--title-font);
+    font-size: 40px;
+}
