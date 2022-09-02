@@ -43,6 +43,31 @@ const OperationArea = () =>{
     const fileChangeHandler = (event) => {
         setFile(event.target.files[0]);
         setFilePicked(true);
+        let data = new FormData()
+        for (let i = 0; i < event.target.files.length; i++) 
+        {
+            data.append("file", event.target.files[i]);
+        }
+        // console.log(event.target.files)
+        // console.log(data.getAll('file'))
+        try
+        {
+            fetch('http://localhost:5000/Uploads',{
+                method: "POST",
+                mode: 'no-cors',
+  
+                body: data
+
+            }).then((response) =>
+                response.json()
+            ).then((res)=>
+                console.log(res)
+            )
+        }
+        catch(err)
+        {
+            console.log(err)
+        }
     };
 
     /* Handles file submission to server */
@@ -78,7 +103,7 @@ const OperationArea = () =>{
     return(
         <div className="operations">
             <form className="fileupload" onSubmit = {fileSubmitHandler}>
-                <input className="upload" type = 'file' onChange={fileChangeHandler}></input>
+                <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandler}></input>
 
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked ? (

@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
@@ -38,7 +39,21 @@ def SearchProtein(searchProt):
     
     return jsonify(searchProt + searchProt)
 
-
+@app.route("/Uploads", methods=['POST'])
+@cross_origin()
+def upload():
+    
+    uploads_dir = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads'
+    uploaded_files = request.files.getlist('file')
+    # uploaded_files = request.files['file']
+    # print(uploaded_files)
+    if 'file' not in request.files:
+        print("No file sent")
+    print("Upload function called, uploading ", len(uploaded_files), " to server")
+    print("Saving in ", uploads_dir)
+    for file in uploaded_files:
+        file.save(os.path.join(uploads_dir, file.filename.split('/')[1]))
+    return jsonify("Uploads completed")
 
 if(__name__) == "__main__":
     app.run(debug=True)
