@@ -52,23 +52,23 @@ def SearchProtein(searchProt):
 
 
 
-def ProcessPatientData(uploads_dir1, uploads_dir2):
+def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
     
     pass
 
 @app.route("/Uploads", methods=['POST'])
 @cross_origin()
 def upload():
-    print("Using Upload")
-    uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Pos'
-    uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Neg'
+    print("Using Patient Upload")
+    uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Pos'
+    uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Neg'
     ClrDirectory(uploads_dir1)
     ClrDirectory(uploads_dir2)
-    uploaded_files1 = request.files.getlist('file1')
-    uploaded_files2 = request.files.getlist('file2')
-    if 'file1' not in request.files:
+    uploaded_files1 = request.files.getlist('filePos')
+    uploaded_files2 = request.files.getlist('fileNeg')
+    if 'filePos' not in request.files:
         print("No file1 sent")
-    if 'file2' not in request.files:
+    if 'fileNeg' not in request.files:
         print("No file sent")
     print("Upload function called, uploading ", len(uploaded_files1), " positive to server")
     print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
@@ -80,6 +80,29 @@ def upload():
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
     return jsonify({"Message":"Uploads completed"})
 
+@app.route("/UploadsTet", methods=['POST'])
+@cross_origin()
+def uploadTet():
+    print("Using Tetramer Upload")
+    uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
+    uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
+    ClrDirectory(uploads_dir1)
+    ClrDirectory(uploads_dir2)
+    uploaded_files1 = request.files.getlist('filePos')
+    uploaded_files2 = request.files.getlist('fileNeg')
+    if 'filePos' not in request.files:
+        print("No file1 sent")
+    if 'fileNeg' not in request.files:
+        print("No file sent")
+    print("Upload function called, uploading ", len(uploaded_files1), " positive to server")
+    print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
+    print("Saving in ", uploads_dir1)
+    print("Saving in ", uploads_dir2)
+    for file in uploaded_files1:
+        file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
+    for file in uploaded_files2:
+        file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
+    return jsonify({"Message":"Uploads completed"})
 
 
 
