@@ -9,13 +9,15 @@ import math
 import os
 import sys
 from turtle import position
+
+import sys
+sys.path.append('src/GenerateDB')
 from DatabaseInit import databaseInit
-from DatabaseInit import insertTetramers
-from DatabaseInit import insertProteins
-import STetramerNRlarge
-import main
-import DatabaseInit
+# import STetramerNRlarge
+# import DatabaseInit
 import pandas as pd
+
+
 
 class Protein:
     def __init__(self) -> None:
@@ -89,13 +91,12 @@ def constructDB():
     insertProteins()
 
 
-def check(heap_size, pos_diff):
+def check(inputPath, heap_size, pos_diff):
     #input significant tetramers
-    db = DatabaseInit.databaseInit()
+    db = databaseInit()
     db.useDB("HumanDB")
 
     st = datetime.datetime.now()
-    inputPath = r"C:\Users\User\Desktop\Pos.txt"
     data = collections.defaultdict()
     with open(inputPath,'r') as f:
         while True:
@@ -139,6 +140,7 @@ def check(heap_size, pos_diff):
             heapq.heappop(heap)
     
     res_protein = []
+    returnFilePath = r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFile.csv"
     file = open("OutputFiles\DictFile.txt","w")   
     for pair in heap:
         
@@ -170,7 +172,7 @@ def check(heap_size, pos_diff):
     print(res_protein)
 
     df = pd.DataFrame(res_protein)
-    df.to_csv("OutputFiles\DictFile.csv")
+    df.to_csv(returnFilePath)
 
     file.close()
 
@@ -178,4 +180,4 @@ def check(heap_size, pos_diff):
 
     print("Time used:" + str(et-st))
 
-check(1000, 10)
+    return returnFilePath
