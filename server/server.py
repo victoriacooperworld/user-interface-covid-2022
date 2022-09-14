@@ -1,6 +1,6 @@
 import os
 from aiohttp import ClientRequest
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS, cross_origin
 import shutil, os
 app = Flask(__name__)
@@ -53,12 +53,20 @@ def SearchProtein(searchProt):
 
 
 def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
-    
+    ###PLACEHOLDER TEST CODE
+    return os.listdir(uploads_dir1)[0]
+    ###
+    pass
+
+def ProcessTetramerData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
+    ###PLACEHOLDER TEST CODE
+    return os.listdir(uploads_dir1)[0]
+    ###
     pass
 
 @app.route("/Uploads", methods=['POST'])
 @cross_origin()
-def upload():
+def uploadPatients():
     print("Using Patient Upload")
     uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Pos'
     uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Neg'
@@ -78,6 +86,8 @@ def upload():
         file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
+    returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2)
+
     return jsonify({"Message":"Uploads completed"})
 
 @app.route("/UploadsTet", methods=['POST'])
@@ -91,17 +101,26 @@ def uploadTet():
     uploaded_files1 = request.files.getlist('filePos')
     uploaded_files2 = request.files.getlist('fileNeg')
     if 'filePos' not in request.files:
-        print("No file1 sent")
+        print("No filePos sent")
     if 'fileNeg' not in request.files:
-        print("No file sent")
+        print("No fileNeg sent")
     print("Upload function called, uploading ", len(uploaded_files1), " positive to server")
     print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
     print("Saving in ", uploads_dir1)
     print("Saving in ", uploads_dir2)
+    positionDiff = request.form.get("PositionDifference")
+    heapSize = request.form.get('HeapSize')
+    print("Position difference is ", positionDiff)
+    print("Heap size is ", heapSize)
     for file in uploaded_files1:
         file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
+
+    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2)
+
+
+
     return jsonify({"Message":"Uploads completed"})
 
 

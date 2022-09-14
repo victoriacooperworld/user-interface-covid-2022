@@ -18,7 +18,10 @@ const OperationArea = () =>{
     const [tetFilePicked2, setTetFilePicked2] = useState(false);
     const [tetramerDatasPos,setTetramerDatasPos] = useState([])
     const [tetramerDatasNeg,setTetramerDatasNeg] = useState([])
+    var tetramerHeapSize = 0
+    var positionDifference = 0
     const [loadingTet, setLoadingTet] = useState(false)
+
 
     /* Caches files locally to be sent */
     const fileChangeHandlerPos = (event) => {
@@ -130,12 +133,21 @@ const OperationArea = () =>{
     };
     /* Handles file submission to server */
     const TetSubmitHandler = (event) => {
-        
         event.preventDefault();
- 
+        tetramerHeapSize = event.target.HeapSize.value
+        positionDifference = event.target.PositionDifference.value
         if(!tetFilePicked1 || !tetFilePicked2)
         {
+            //PSUEDO CODE: NEED TO THROW VISIBLE ERROR
             console.log("ERROR: One of the files were not set")
+            //
+            return
+        }
+        if(tetramerHeapSize <= 0 || positionDifference <= 0){
+            //PSEUDO CODE: NEED TO THROW A VISIBLE ERROR
+            console.log("Heap size or position difference invalid")
+            console.log(positionDifference, tetramerHeapSize)
+            //
             return
         }
         setLoadingTet(true)
@@ -148,6 +160,9 @@ const OperationArea = () =>{
         {
             data.append("fileNeg",tetramerDatasNeg[i])
         }
+        data.append("PositionDifference", positionDifference)
+        data.append("HeapSize", tetramerHeapSize)
+        console.log(positionDifference, tetramerHeapSize)
         try
         {
             fetch('http://localhost:5000/UploadsTet',{
@@ -230,6 +245,22 @@ const OperationArea = () =>{
                 ): (
                     <p></p>
                 )}
+                <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                    }
+                    else{
+                        tetramerHeapSize = event.target.value
+                    }
+                }}></input>
+                <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                    }
+                    else{
+                        positionDifference = event.target.value
+                    }
+                }}></input>
                 <button className="button" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
             </form>
             {/* <h3>OperationArea</h3> */}
