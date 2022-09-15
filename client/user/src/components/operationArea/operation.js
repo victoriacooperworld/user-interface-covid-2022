@@ -167,9 +167,7 @@ const OperationArea = () =>{
         {
             fetch('http://localhost:5000/UploadsTet',{
                 method: "POST",
-                
                 body: data
-
             }).then((response) =>
                 response.json()
             ).then((res)=>
