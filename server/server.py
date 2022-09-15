@@ -1,5 +1,5 @@
 import os
-from aiohttp import ClientRequest
+from src.GenerateDB import HumanDB 
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS, cross_origin
 import shutil, os
@@ -59,18 +59,24 @@ def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
     ###
     pass
 
-def ProcessTetramerData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
+def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference):
+
     ###PLACEHOLDER TEST CODE
-    return os.listdir(uploads_dir1)[0]
-    ###
-    pass
+    filePath1 = os.path.join(uploads_dir1,os.listdir(uploads_dir1)[0])
+    filePath2 = os.path.join(uploads_dir2,os.listdir(uploads_dir2)[0])
+    ret1 = HumanDB.check(filePath1, heapSize, positionsDifference)
+    # ret2 = HumanDB.check(filePath2, heapSize, positionsDifference)
+    return ret1
+    
 
 @app.route("/Uploads", methods=['POST'])
 @cross_origin()
 def uploadPatients():
     print("Using Patient Upload")
-    uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Pos'
-    uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Neg'
+    # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Pos'
+    # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Patient/Neg'
+    uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
+    uploads_dir2 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\NegOutput"
     ClrDirectory(uploads_dir1)
     ClrDirectory(uploads_dir2)
     uploaded_files1 = request.files.getlist('filePos')
@@ -87,7 +93,7 @@ def uploadPatients():
         file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
-    returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2)
+    returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2) #a path
 
     return jsonify({"Message":"Uploads completed"})
 
@@ -95,8 +101,10 @@ def uploadPatients():
 @cross_origin()
 def uploadTet():
     print("Using Tetramer Upload")
-    uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
-    uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
+    # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
+    # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
+    uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
+    uploads_dir2 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\NegOutput"
     ClrDirectory(uploads_dir1)
     ClrDirectory(uploads_dir2)
     uploaded_files1 = request.files.getlist('filePos')
@@ -109,8 +117,8 @@ def uploadTet():
     print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
     print("Saving in ", uploads_dir1)
     print("Saving in ", uploads_dir2)
-    positionDiff = request.form.get("PositionDifference")
-    heapSize = request.form.get('HeapSize')
+    positionDiff = int(request.form.get("PositionDifference"))
+    heapSize = int(request.form.get('HeapSize'))
     print("Position difference is ", positionDiff)
     print("Heap size is ", heapSize)
     for file in uploaded_files1:
@@ -118,11 +126,11 @@ def uploadTet():
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
 
-    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2)
+    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff)
 
 
 
-    return jsonify({"Message":"Uploads completed"})
+    return send_file(returnFile)
 
 
 
