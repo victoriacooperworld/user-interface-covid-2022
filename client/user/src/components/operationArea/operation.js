@@ -1,4 +1,5 @@
 import {React, useState} from "react";
+import { FileUploader } from "../../FileUploader";
 import './operation.css';
 
 const OperationArea = () =>{
@@ -187,7 +188,8 @@ const OperationArea = () =>{
     return(
         <div className="operations">
             <form className="fileupload" onSubmit = {fileSubmitHandler}>
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerPos}></input>
+                {/* <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerPos} accept = '.fna, .txt'></input> */}
+                <FileUploader buttonText = "Upload Positive Patient Data" callBack = {fileChangeHandlerPos} />
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked1 ? (
                     <div className="fileinfo">
@@ -199,7 +201,7 @@ const OperationArea = () =>{
                     <p></p>
                 )}
 
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerNeg} ></input>
+                <FileUploader buttonText = "Upload Negative Patient Data" callBack = {fileChangeHandlerNeg}/>
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked2 ? (
                     <div className="fileinfo">
@@ -210,16 +212,16 @@ const OperationArea = () =>{
                 ): (
                     <p></p>
                 )}
-                <button className="button" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
+                <button className="buttonSubmit" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
             </form>
             
            <form className="proteinsearch" onSubmit = {SearchProtein}>
                 <input className="textfield" placeholder="Enter protein" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
-                <button className="button" type="submit">Search Protein</button>
+                <button className="buttonSubmit" type="submit">Search Protein</button>
            </form> 
 
            <form className="fileupload" onSubmit = {TetSubmitHandler} >
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={TetChangeHandlerPos}  ></input>
+                <FileUploader buttonText = "Upload Positive Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
 
                 {/* Render conditionally if file is chosen or not chosen */}
                 {tetFilePicked1 ? (
@@ -232,7 +234,7 @@ const OperationArea = () =>{
                     <p></p>
                 )}
 
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={TetChangeHandlerNeg} ></input>
+                <FileUploader buttonText = "Upload Negative Sample Tetramer Data" callBack = {TetChangeHandlerNeg}/>
                 {/* Render conditionally if file is chosen or not chosen */}
                 {tetFilePicked2 ? (
                     <div className="fileinfo">
@@ -259,7 +261,7 @@ const OperationArea = () =>{
                         positionDifference = event.target.value
                     }
                 }}></input>
-                <button className="button" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
+                <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
             </form>
             {/* <h3>OperationArea</h3> */}
         </div>
