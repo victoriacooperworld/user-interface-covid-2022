@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React, useState} from 'react';
 import './operation.css';
 
 const OperationArea = () =>{
@@ -21,7 +21,6 @@ const OperationArea = () =>{
     var tetramerHeapSize = 0
     var positionDifference = 0
     const [loadingTet, setLoadingTet] = useState(false)
-
 
     /* Caches files locally to be sent */
     const fileChangeHandlerPos = (event) => {
@@ -166,15 +165,22 @@ const OperationArea = () =>{
         try
         {
             fetch('http://localhost:5000/UploadsTet',{
-                method: "POST",
-                
+                method: "POST",          
                 body: data
 
             }).then((response) =>
-                response.json()
+                response.blob()
             ).then((res)=>
                 {
                     console.log(res)
+                    const url = URL.createObjectURL(res)
+                    const filename = 'Downloadd'
+                    let a = document.createElement("a");
+                    document.body.appendChild(a)
+                    a.style = "display: none"
+                    a.href = url
+                    a.download = filename
+                    a.click()
                     setLoadingTet(false)
                 }
             )
@@ -184,6 +190,7 @@ const OperationArea = () =>{
             console.log(err)
         }
     };
+
 
 
     return(
