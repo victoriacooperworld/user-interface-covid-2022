@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import { FileUploader } from "../../FileUploader";
+import { FileUploader } from "../../FileUploader/FileUploader";
 import './operation.css';
 
 const OperationArea = () =>{
@@ -7,21 +7,19 @@ const OperationArea = () =>{
     const [fileNeg,setfileNeg] = useState();
     const [filePicked1, setFilePicked1] = useState(false);
     const [filePicked2, setFilePicked2] = useState(false);
-    const [patientDatasPos, setpatientDatasPos] = useState([])
-    const [patientDatasNeg, setpatientDatasNeg] = useState([])
-    const [loadingPatient, setLoadingPatient] = useState(false)
-
+    const [patientDatasPos, setpatientDatasPos] = useState([]);
+    const [patientDatasNeg, setpatientDatasNeg] = useState([]);
+    const [loadingPatient, setLoadingPatient] = useState(false);
     const [searchProt, setSearchProt] = useState("");
-
     const [tetFilePos,settetfilePos] = useState();
     const [tetFileNeg,settetfileNeg] = useState();
     const [tetFilePicked1, setTetFilePicked1] = useState(false);
     const [tetFilePicked2, setTetFilePicked2] = useState(false);
-    const [tetramerDatasPos,setTetramerDatasPos] = useState([])
-    const [tetramerDatasNeg,setTetramerDatasNeg] = useState([])
-    var tetramerHeapSize = 0
-    var positionDifference = 0
-    const [loadingTet, setLoadingTet] = useState(false)
+    const [tetramerDatasPos,setTetramerDatasPos] = useState([]);
+    const [tetramerDatasNeg,setTetramerDatasNeg] = useState([]);
+    var tetramerHeapSize = 0;
+    var positionDifference = 0;
+    const [loadingTet, setLoadingTet] = useState(false);
 
 
     /* Caches files locally to be sent */

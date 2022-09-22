@@ -13,7 +13,7 @@ export const FileUploader = (props) => {
         hiddenFileInput.current.click();
       };
   return(
-    <>
+  <>
     <button onClick={handleClick} className = "FileUploader">
       {props.buttonText}
     </button>
