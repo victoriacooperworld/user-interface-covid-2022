@@ -13,27 +13,30 @@
   border: 3px solid lightskyblue;
 }
 
-/* Container for search and upload patient data cards */
+/* Container for search and upload patient data cards (entire body) */
 .operations {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  row-gap: 50px;
+  align-items: center;
+  row-gap: 10px;
   height: 210px;
   width: 100%;
 }
 
+/* Card Styles */
 .operations form {
   background: var(--form-gradient);
   box-shadow: var(--shadow);
-  padding: 0px 20px;
+  border: 1px solid #999;
+  padding: 20px;
 }
 
 /* Upload patient data styles */
 .fileupload {
   display: flex;
   flex-direction: column;
-  row-gap: 35px;
+  row-gap: 10px;
   align-items: center;
   justify-content: center;
 }
