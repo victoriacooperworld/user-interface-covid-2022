@@ -19,9 +19,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  row-gap: 10px;
-  height: 210px;
-  width: 100%;
+  row-gap: 25px;
+  margin-bottom: 60px;
 }
 
 /* Card Styles */
