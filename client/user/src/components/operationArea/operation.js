@@ -245,14 +245,19 @@ const OperationArea = () =>{
                 ): (
                     <p></p>
                 )}
-                <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {
-                        event.preventDefault();
-                    }
-                    else{
-                        tetramerHeapSize = event.target.value
-                    }
-                }}></input>
+                <div className = 'textFieldWrap'> 
+                    <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {
+                            event.preventDefault();
+                        }
+                        else{
+                            tetramerHeapSize = event.target.value
+                        }
+                    }}></input>
+
+                <span className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">?</span>
+                </div>
+                <div className = 'textFieldWrap'>
                 <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {
                         event.preventDefault();
@@ -261,6 +266,8 @@ const OperationArea = () =>{
                         positionDifference = event.target.value
                     }
                 }}></input>
+                                <span className="textFieldHelp" data-hover="Hello">?</span>
+                </div>
                 <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
             </form>
             {/* <h3>OperationArea</h3> */}
