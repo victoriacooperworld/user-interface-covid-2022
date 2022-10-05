@@ -1,4 +1,5 @@
 import {React, useState} from "react";
+import { Float32Attribute } from "three";
 import { FileUploader } from "../../FileUploader";
 import './operation.css';
 
@@ -23,6 +24,7 @@ const OperationArea = () =>{
     var positionDifference = 0
     const [loadingTet, setLoadingTet] = useState(false)
 
+    const [checked, setChecked] = useState(false);
 
     /* Caches files locally to be sent */
     const fileChangeHandlerPos = (event) => {
@@ -151,6 +153,7 @@ const OperationArea = () =>{
             //
             return
         }
+
         setLoadingTet(true)
         let data = new FormData()
         for (let i =0; i < tetramerDatasPos.length;i++)
@@ -163,6 +166,7 @@ const OperationArea = () =>{
         }
         data.append("PositionDifference", positionDifference)
         data.append("HeapSize", tetramerHeapSize)
+        data.append("ReturnPearson", checked ? 1 : 0)
         console.log(positionDifference, tetramerHeapSize)
         try
         {
@@ -255,7 +259,7 @@ const OperationArea = () =>{
                         }
                     }}></input>
 
-                <span className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">?</span>
+                <span className="textFieldHelp" data-hover="This is the maximum heap size for the output tetramers">?</span>
                 </div>
                 <div className = 'textFieldWrap'>
                 <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
@@ -266,11 +270,19 @@ const OperationArea = () =>{
                         positionDifference = event.target.value
                     }
                 }}></input>
-                                <span className="textFieldHelp" data-hover="Hello">?</span>
+                <span className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">?</span>
+                </div>
+                <div className = 'pearsonCheckWrap'>
+                    <div className="pearsonCheck">Calculate Pearson Correlation Coefficients</div>
+                    <div className = "pearsonCBWrapper">
+                        <input className = "pearsonCheckBox" type="checkbox" checked = {checked} onChange={()=>{setChecked(!checked)}} />
+                        <span  className="textFieldHelp pearsonCheckBox" data-hover="Relates significant tetramers to one another on a -1 to 1 scale">?</span>
+                    </div>
                 </div>
                 <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
+                
             </form>
-            {/* <h3>OperationArea</h3> */}
+
         </div>
     )
 }

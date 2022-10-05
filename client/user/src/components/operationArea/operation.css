@@ -85,6 +85,20 @@
   opacity: 1;
   visibility: visible;
 }
+
 .textFieldWrap{
   display: inline-block
+}
+.pearsonCheckWrap{
+  width: 100%
+}
+.pearsonCheck{
+  display:inline-block
+  
+}
+.pearsonCheckBox{
+  display: inline-block;
+}
+.pearsonCBWrapper{
+  float: right
 }
