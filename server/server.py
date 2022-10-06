@@ -101,6 +101,8 @@ def uploadPatients():
 @cross_origin()
 def uploadTet():
     print("Using Tetramer Upload")
+    returnPearson = bool(int(request.form.get('ReturnPearson')))
+    print("Return pearson is ",returnPearson)
     # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
     # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
     uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
@@ -119,7 +121,7 @@ def uploadTet():
     print("Saving in ", uploads_dir2)
     positionDiff = int(request.form.get("PositionDifference"))
     heapSize = int(request.form.get('HeapSize'))
-    returnPearson = bool(int(request.form.get('ReturnPearson')))
+
     print("Position difference is ", positionDiff)
     print("Heap size is ", heapSize)
     for file in uploaded_files1:
