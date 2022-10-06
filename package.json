@@ -5,7 +5,8 @@
     "@mui/material": "^5.10.1",
     "axios": "^0.27.2",
     "react-dropdown": "^1.11.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-select": "^5.4.0"
   },
   "devDependencies": {
     "react-router-dom": "^6.3.0"
