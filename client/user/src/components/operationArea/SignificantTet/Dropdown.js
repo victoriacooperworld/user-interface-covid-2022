@@ -8,18 +8,17 @@ const databaseOptions = [
   { label: "Non-redundant", value: 3 },
 ];
 
-const DropdownMenu = () => (
-
+const DropdownMenu = (props) => {
     
-  <div className="dropdown">
-    <div className="row">
-      <div className="col-md-4"></div>
-      <div className="col-md-4">
-      <Select options={databaseOptions} />
-      </div>
-      <div className="col-md-4"></div>
-    </div>
-  </div>
-);
+    const onTrigger = (selected) =>{
+        console.log(selected.label)
+        props.parentCallback(selected.label)
+        
+    }
+    return (
+
+        <Select options = {databaseOptions} onChange = {onTrigger}></Select>
+    )
+};
 
 export default DropdownMenu;

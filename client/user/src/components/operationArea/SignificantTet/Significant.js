@@ -1,8 +1,8 @@
 import {React, useState} from "react";
-
+import * as ReactDOM from 'react-dom';
 import { FileUploader } from "../../../FileUploader/FileUploader";
 import '../operation.css';
-import Dropdown from 'react-dropdown';
+import Select from 'react-select'
 import 'react-dropdown/style.css';
 import DropdownMenu from "./Dropdown";
 const SignificantTetramers = () =>{
@@ -16,9 +16,12 @@ const SignificantTetramers = () =>{
     var positionDifference = 0;
     const [loadingTet, setLoadingTet] = useState(false);
     const [checked, setChecked] = useState(false);
+    const [DB, setDB] = useState("")
 
-
-
+    const handleDB = (childData) =>{
+        setDB(childData)
+        console.log("Parent Side: ",childData)
+    }
     
     const TetChangeHandlerPos = (event) => {
         settetfilePos(event.target.files[0]);
@@ -65,6 +68,7 @@ const SignificantTetramers = () =>{
         data.append("PositionDifference", positionDifference)
         data.append("HeapSize", tetramerHeapSize)
         data.append("ReturnPearson", checked ? 1 : 0)
+        data.append("DB", DB);
         console.log(positionDifference, tetramerHeapSize)
         try{
             fetch('http://localhost:5000/UploadsTet',{
@@ -148,8 +152,9 @@ const SignificantTetramers = () =>{
                     <span  className="textFieldHelp pearsonCheckBox" data-hover="Relates significant tetramers to one another on a -1 to 1 scale"> Hint </span>
                 </div>
             </div>
+            <DropdownMenu parentCallback = {handleDB}/>
             <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
-            <DropdownMenu/>
+            
         </form>
     );
 }
