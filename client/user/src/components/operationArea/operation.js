@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import {React, useState} from 'react';
-=======
 import {React, useState} from "react";
 
 import { FileUploader } from "../../FileUploader/FileUploader";
->>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
 import './operation.css';
 
 const OperationArea = () =>{
@@ -26,11 +22,8 @@ const OperationArea = () =>{
     var positionDifference = 0;
     const [loadingTet, setLoadingTet] = useState(false);
 
-<<<<<<< HEAD
-=======
     const [checked, setChecked] = useState(false);
 
->>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
     /* Caches files locally to be sent */
     const fileChangeHandlerPos = (event) => {
 
@@ -93,31 +86,6 @@ const OperationArea = () =>{
         }
     };
 
-    /* Hanldes submission of text entered in protein search */
-    const SearchProtein = event => {
-        event.preventDefault();
-        try{
-            fetch('http://localhost:5000/SearchProtein/'+searchProt, {
-                method: "GET",
-                headers: {
-                    'Content-type': 'application/json'
-                  }
-            }).then(
-                res => 
-                    res.json()
-                
-                //do something with the responnse
-            ).then(
-                jsonRet => console.log(jsonRet)
-              //do sometjing with the response
-            )
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-
-    /* Caches files locally to be sent */
     const TetChangeHandlerPos = (event) => {
         
         settetfilePos(event.target.files[0]);
@@ -176,11 +144,7 @@ const OperationArea = () =>{
         try
         {
             fetch('http://localhost:5000/UploadsTet',{
-<<<<<<< HEAD
-                method: "POST",          
-=======
                 method: "POST",
->>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
                 body: data
             }).then((response) =>
                 response.blob()
@@ -237,10 +201,7 @@ const OperationArea = () =>{
                 <button className="buttonSubmit" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
             </form>
             
-           <form className="proteinsearch" onSubmit = {SearchProtein}>
-                <input className="textfield" placeholder="Enter protein" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
-                <button className="buttonSubmit" type="submit">Search Protein</button>
-           </form> 
+
 
            <form className="fileupload" onSubmit = {TetSubmitHandler} >
                 <FileUploader buttonText = "Upload Positive Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
