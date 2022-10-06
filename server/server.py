@@ -5,6 +5,7 @@ from flask_cors import CORS, cross_origin
 import shutil, os
 app = Flask(__name__)
 
+
 def ClrDirectory(folder):
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
@@ -58,7 +59,7 @@ def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
     ###
     pass
 
-def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference):
+def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference, returnPearson = False):
 
     ###PLACEHOLDER TEST CODE
     filePath1 = os.path.join(uploads_dir1,os.listdir(uploads_dir1)[0])
@@ -100,6 +101,8 @@ def uploadPatients():
 @cross_origin()
 def uploadTet():
     print("Using Tetramer Upload")
+    returnPearson = bool(int(request.form.get('ReturnPearson')))
+    print("Return pearson is ",returnPearson)
     # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
     # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
     uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
@@ -118,6 +121,7 @@ def uploadTet():
     print("Saving in ", uploads_dir2)
     positionDiff = int(request.form.get("PositionDifference"))
     heapSize = int(request.form.get('HeapSize'))
+
     print("Position difference is ", positionDiff)
     print("Heap size is ", heapSize)
     for file in uploaded_files1:
@@ -125,7 +129,7 @@ def uploadTet():
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
 
-    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff)
+    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff, returnPearson)
 
 
 

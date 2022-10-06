@@ -3,7 +3,7 @@ import './navbar.css'
 const Navbar = () => {
     return (
         <nav className='navbar'>
-            <h2>Virtual Protein Processor</h2>
+            <h2>Antibody Target Discovery Tool</h2>
         </nav>
     )
 }

@@ -8,7 +8,7 @@ from html import entities
 import math
 import os
 import sys
-from turtle import position
+# from turtle import position
 
 import sys
 sys.path.append('src/GenerateDB')

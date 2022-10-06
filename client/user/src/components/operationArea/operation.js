@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import {React, useState} from 'react';
+=======
+import {React, useState} from "react";
+
+import { FileUploader } from "../../FileUploader/FileUploader";
+>>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
 import './operation.css';
 
 const OperationArea = () =>{
@@ -6,22 +12,25 @@ const OperationArea = () =>{
     const [fileNeg,setfileNeg] = useState();
     const [filePicked1, setFilePicked1] = useState(false);
     const [filePicked2, setFilePicked2] = useState(false);
-    const [patientDatasPos, setpatientDatasPos] = useState([])
-    const [patientDatasNeg, setpatientDatasNeg] = useState([])
-    const [loadingPatient, setLoadingPatient] = useState(false)
-
+    const [patientDatasPos, setpatientDatasPos] = useState([]);
+    const [patientDatasNeg, setpatientDatasNeg] = useState([]);
+    const [loadingPatient, setLoadingPatient] = useState(false);
     const [searchProt, setSearchProt] = useState("");
-
     const [tetFilePos,settetfilePos] = useState();
     const [tetFileNeg,settetfileNeg] = useState();
     const [tetFilePicked1, setTetFilePicked1] = useState(false);
     const [tetFilePicked2, setTetFilePicked2] = useState(false);
-    const [tetramerDatasPos,setTetramerDatasPos] = useState([])
-    const [tetramerDatasNeg,setTetramerDatasNeg] = useState([])
-    var tetramerHeapSize = 0
-    var positionDifference = 0
-    const [loadingTet, setLoadingTet] = useState(false)
+    const [tetramerDatasPos,setTetramerDatasPos] = useState([]);
+    const [tetramerDatasNeg,setTetramerDatasNeg] = useState([]);
+    var tetramerHeapSize = 0;
+    var positionDifference = 0;
+    const [loadingTet, setLoadingTet] = useState(false);
 
+<<<<<<< HEAD
+=======
+    const [checked, setChecked] = useState(false);
+
+>>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
     /* Caches files locally to be sent */
     const fileChangeHandlerPos = (event) => {
 
@@ -149,6 +158,7 @@ const OperationArea = () =>{
             //
             return
         }
+
         setLoadingTet(true)
         let data = new FormData()
         for (let i =0; i < tetramerDatasPos.length;i++)
@@ -161,13 +171,17 @@ const OperationArea = () =>{
         }
         data.append("PositionDifference", positionDifference)
         data.append("HeapSize", tetramerHeapSize)
+        data.append("ReturnPearson", checked ? 1 : 0)
         console.log(positionDifference, tetramerHeapSize)
         try
         {
             fetch('http://localhost:5000/UploadsTet',{
+<<<<<<< HEAD
                 method: "POST",          
+=======
+                method: "POST",
+>>>>>>> dc1230b0965e2345a2aa772d659acb1bbd7f400b
                 body: data
-
             }).then((response) =>
                 response.blob()
             ).then((res)=>
@@ -196,7 +210,8 @@ const OperationArea = () =>{
     return(
         <div className="operations">
             <form className="fileupload" onSubmit = {fileSubmitHandler}>
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerPos}></input>
+                {/* <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerPos} accept = '.fna, .txt'></input> */}
+                <FileUploader buttonText = "Upload Positive Patient Data" callBack = {fileChangeHandlerPos} />
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked1 ? (
                     <div className="fileinfo">
@@ -208,7 +223,7 @@ const OperationArea = () =>{
                     <p></p>
                 )}
 
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={fileChangeHandlerNeg} ></input>
+                <FileUploader buttonText = "Upload Negative Patient Data" callBack = {fileChangeHandlerNeg}/>
                 {/* Render conditionally if file is chosen or not chosen */}
                 {filePicked2 ? (
                     <div className="fileinfo">
@@ -219,16 +234,16 @@ const OperationArea = () =>{
                 ): (
                     <p></p>
                 )}
-                <button className="button" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
+                <button className="buttonSubmit" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
             </form>
             
            <form className="proteinsearch" onSubmit = {SearchProtein}>
                 <input className="textfield" placeholder="Enter protein" type = 'text' onChange={(e)=>setSearchProt(e.target.value) }></input>
-                <button className="button" type="submit">Search Protein</button>
+                <button className="buttonSubmit" type="submit">Search Protein</button>
            </form> 
 
            <form className="fileupload" onSubmit = {TetSubmitHandler} >
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={TetChangeHandlerPos}  ></input>
+                <FileUploader buttonText = "Upload Positive Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
 
                 {/* Render conditionally if file is chosen or not chosen */}
                 {tetFilePicked1 ? (
@@ -241,7 +256,7 @@ const OperationArea = () =>{
                     <p></p>
                 )}
 
-                <input className="upload" directory="" webkitdirectory="" type="file" onChange={TetChangeHandlerNeg} ></input>
+                <FileUploader buttonText = "Upload Negative Sample Tetramer Data" callBack = {TetChangeHandlerNeg}/>
                 {/* Render conditionally if file is chosen or not chosen */}
                 {tetFilePicked2 ? (
                     <div className="fileinfo">
@@ -252,14 +267,19 @@ const OperationArea = () =>{
                 ): (
                     <p></p>
                 )}
-                <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {
-                        event.preventDefault();
-                    }
-                    else{
-                        tetramerHeapSize = event.target.value
-                    }
-                }}></input>
+                <div className = 'textFieldWrap'> 
+                    <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {
+                            event.preventDefault();
+                        }
+                        else{
+                            tetramerHeapSize = event.target.value
+                        }
+                    }}></input>
+
+                <span className="textFieldHelp" data-hover="This is the maximum heap size for the output tetramers">?</span>
+                </div>
+                <div className = 'textFieldWrap'>
                 <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {
                         event.preventDefault();
@@ -268,9 +288,19 @@ const OperationArea = () =>{
                         positionDifference = event.target.value
                     }
                 }}></input>
-                <button className="button" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
+                <span className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">?</span>
+                </div>
+                <div className = 'pearsonCheckWrap'>
+                    <div className="pearsonCheck">Calculate Pearson Correlation Coefficients</div>
+                    <div className = "pearsonCBWrapper">
+                        <input className = "pearsonCheckBox" type="checkbox" checked = {checked} onChange={()=>{setChecked(!checked)}} />
+                        <span  className="textFieldHelp pearsonCheckBox" data-hover="Relates significant tetramers to one another on a -1 to 1 scale">?</span>
+                    </div>
+                </div>
+                <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
+                
             </form>
-            {/* <h3>OperationArea</h3> */}
+
         </div>
     )
 }
