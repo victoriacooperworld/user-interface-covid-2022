@@ -103,6 +103,8 @@ def uploadTet():
     print("Using Tetramer Upload")
     returnPearson = bool(int(request.form.get('ReturnPearson')))
     print("Return pearson is ",returnPearson)
+    dbtouse = request.form.get("DB")
+    print("DB to use", dbtouse)
     # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
     # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
     uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
@@ -128,7 +130,7 @@ def uploadTet():
         file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
-
+    
     returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff, returnPearson)
 
 
