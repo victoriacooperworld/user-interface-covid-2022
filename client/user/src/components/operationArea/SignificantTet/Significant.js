@@ -133,26 +133,29 @@ const SignificantTetramers = () =>{
                         tetramerHeapSize = event.target.value
                     }
                 }}></input>
-
-            <span className="textFieldHelp" data-hover="This is the maximum heap size for the output tetramers">Hint</span>
+      
+                <div className="textFieldHelp" data-hover="This is the maximum heap size for the output tetramers">
+                    <HelpIcon ></HelpIcon>
+                </div>       
             </div>
+         
             <div className = 'textFieldWrap'>
-            <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
-                if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                }
-                else{
-                    positionDifference = event.target.value
-                }
-            }}>
-            </input>
-            <span className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">Hint</span>
+                <input className="textfield" name = "PositionDifference" placeholder="Position Difference" type = 'text' onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                        event.preventDefault();
+                    }
+                    else{
+                        positionDifference = event.target.value
+                    }
+                }}>
+                </input>
+                <div className="textFieldHelp" data-hover="This is the maximum position difference allowed between two tetramers in a protein where it can still be called significantly correlated.">
+                    <HelpIcon ></HelpIcon>
+                </div>
             </div>
            
             <div className = 'pearsonCheckWrap'>
                 <h5 className="pearsonCheck"></h5>
-         
-                {/* <input className = "pearsonCheckBox" type="checkbox" checked = {checked} onChange={()=>{setChecked(!checked)}} /> */}
                 <CheckPCC/>
                 <div className = "pearsonCBWrapper">
                     <div className="textFieldHelp" data-hover="Relates significant tetramers to one another on a -1 to 1 scale">

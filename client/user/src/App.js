@@ -1,14 +1,16 @@
 import './App.css';
 import OperationArea from './components/operationArea/operation';
 import TetramerGet from './components/TetramerGet';
-import Navbar from './components/navbar/Navbar';
+import Header from './components/header/header';
 import Footer from './components/footer/Footer';
-import DropdownMenu from './components/operationArea/SignificantTet/Dropdown';
+import Navbar from './components/navbar/navbar.js'
+
 function App() {
   return (
 
     <div className="App">
-      <Navbar/>
+      <Header/>
+      <Navbar></Navbar>
       <OperationArea/>
       <Footer/>
       

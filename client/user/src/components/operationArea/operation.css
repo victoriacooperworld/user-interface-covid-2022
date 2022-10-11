@@ -91,7 +91,9 @@
 }
 
 .textFieldWrap{
-  display: inline-block
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
 }
 .pearsonCheckWrap{
   width: 100%;
