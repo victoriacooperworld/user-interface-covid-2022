@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react'
 
 /**
-* @author
+* @author 
 * @function TetramerGet
 **/
 

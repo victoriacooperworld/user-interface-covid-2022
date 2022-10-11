@@ -69,16 +69,18 @@
   font-size: 18px;
 }
 
+.textFieldHelp{
+  display:inline-block
+  
+}
 .textFieldHelp:before{
   content: attr(data-hover);
   visibility: hidden;
   opacity: 0;
-
   position: absolute;
 
   background-color: black;
   color: #fff;
-  
   border-radius: 5px;
   padding: 5px 5px;
   transition: opacity 1s ease-in-out;
@@ -92,14 +94,22 @@
   display: inline-block
 }
 .pearsonCheckWrap{
-  width: 100%
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  
 }
 .pearsonCheck{
-  display:inline-block
+  display:inline-block;
+  
+
   
 }
 .pearsonCheckBox{
   display: inline-block;
+  vertical-align: baseline;
+  
+
 }
 .pearsonCBWrapper{
   float: right

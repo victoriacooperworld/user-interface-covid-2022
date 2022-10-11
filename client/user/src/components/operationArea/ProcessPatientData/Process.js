@@ -2,7 +2,7 @@ import {React, useState} from "react";
 
 import { FileUploader } from "../../../FileUploader/FileUploader";
 import '../operation.css';
-
+import { Button } from "@mui/material";
 const ProcessPatient = () =>{
     const [filePos,setfilePos] = useState();
     const [fileNeg,setfileNeg] = useState();
@@ -91,7 +91,7 @@ const ProcessPatient = () =>{
             ): (
                 <p></p>
             )}
-            <button className="buttonSubmit" type="submit" disabled = {loadingPatient}>Process Patient Data</button>
+            <Button className="buttonSubmit" type="submit" disabled = {loadingPatient}>Process Patient Data</Button>
         </form>
     )
 }

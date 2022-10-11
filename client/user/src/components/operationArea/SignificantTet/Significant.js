@@ -5,6 +5,9 @@ import '../operation.css';
 import Select from 'react-select'
 import 'react-dropdown/style.css';
 import DropdownMenu from "./Dropdown";
+import {Button} from '@mui/material';
+import HelpIcon from '@mui/icons-material/Help';
+import CheckPCC from './CheckBox.js'
 const SignificantTetramers = () =>{
     const [tetFilePos,settetfilePos] = useState();
     const [tetFileNeg,settetfileNeg] = useState();
@@ -20,7 +23,7 @@ const SignificantTetramers = () =>{
 
     const handleDB = (childData) =>{
         setDB(childData)
-        console.log("Parent Side: ",childData)
+        console.log("Parent Side: ", childData)
     }
     
     const TetChangeHandlerPos = (event) => {
@@ -96,6 +99,7 @@ const SignificantTetramers = () =>{
 
     return(
         <form className="fileupload" onSubmit = {TetSubmitHandler} >
+           
             <FileUploader buttonText = "Upload Positive Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
 
             {/* Render conditionally if file is chosen or not chosen */}
@@ -146,14 +150,19 @@ const SignificantTetramers = () =>{
             </div>
            
             <div className = 'pearsonCheckWrap'>
-                <div className="pearsonCheck">Calculate Pearson Correlation Coefficients</div>
+                <h5 className="pearsonCheck"></h5>
+         
+                {/* <input className = "pearsonCheckBox" type="checkbox" checked = {checked} onChange={()=>{setChecked(!checked)}} /> */}
+                <CheckPCC/>
                 <div className = "pearsonCBWrapper">
-                    <input className = "pearsonCheckBox" type="checkbox" checked = {checked} onChange={()=>{setChecked(!checked)}} />
-                    <span  className="textFieldHelp pearsonCheckBox" data-hover="Relates significant tetramers to one another on a -1 to 1 scale"> Hint </span>
+                    <div className="textFieldHelp" data-hover="Relates significant tetramers to one another on a -1 to 1 scale">
+                        <HelpIcon ></HelpIcon>
+                    </div>
+                    {/* <span className="textFieldHelp pearsonCheckBox" data-hover="Relates significant tetramers to one another on a -1 to 1 scale"> Hint </span> */}
                 </div>
             </div>
             <DropdownMenu parentCallback = {handleDB}/>
-            <button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</button>
+            <Button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</Button>
             
         </form>
     );
