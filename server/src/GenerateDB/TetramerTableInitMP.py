@@ -1,7 +1,7 @@
 from multiprocessing import Pool
 import multiprocessing
 from GenerateDB.DatabaseInit import databaseInit
-from STetramerNR import GenerateTetramers
+
 from timeit import timeit
 import GenerateDB.STetramerNRlarge as STetramerNRlarge
 import os

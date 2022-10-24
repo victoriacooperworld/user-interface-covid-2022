@@ -100,7 +100,7 @@ const SignificantTetramers = () =>{
     return(
         <form className="fileupload" onSubmit = {TetSubmitHandler} >
            
-            <FileUploader buttonText = "Upload Positive Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
+            <FileUploader buttonText = "Upload Significant Sample Tetramer Data" callBack = {TetChangeHandlerPos}/>
 
             {/* Render conditionally if file is chosen or not chosen */}
             {tetFilePicked1 ? (
@@ -113,17 +113,6 @@ const SignificantTetramers = () =>{
                 <p></p>
             )}
 
-            <FileUploader buttonText = "Upload Negative Sample Tetramer Data" callBack = {TetChangeHandlerNeg}/>
-            {/* Render conditionally if file is chosen or not chosen */}
-            {tetFilePicked2 ? (
-                <div className="fileinfo">
-                    <p>Name: {tetFileNeg.name}</p>
-                    <p>Type: {tetFileNeg.type}</p>
-                    <p>Size: {parseInt(tetFileNeg.size / 100000)}kb</p>
-                </div>
-            ): (
-                <p></p>
-            )}
             <div className = 'textFieldWrap'> 
                 <input className="textfield" name = "HeapSize" placeholder="Output Heap Size" type = 'text' onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {

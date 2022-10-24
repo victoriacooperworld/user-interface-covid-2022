@@ -16,8 +16,6 @@ TetramerList = {"SSSS": "(0,1)", "SSSL": "(2,5)"}
 app.get('/TetramerID/GetEntry/:Tetramer', async (request, response) =>{
     const Tetramer = request.params.Tetramer
     try{
-        //PROTOTYPE CODE
-        // TetEntries = TetramerList[Tetramer]
         TetEntries = "Hah"
         response.json(TetEntries)
         //END PROTOTYPE CODE

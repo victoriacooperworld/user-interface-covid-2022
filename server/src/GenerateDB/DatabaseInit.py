@@ -37,9 +37,14 @@ class databaseInit:
     def __init__(self) -> None:
         self.mydb = mysql.connector.connect(
             #change the username and password to your own
-            host="localhost",
-            user="root",
-            password="123456"
+            host="database-human.cmp1ka38123m.us-west-1.rds.amazonaws.com",
+            user="cglabe",
+            password="123456789"
+
+            
+            # host = "localhost",
+            # user = "root",
+            # password = "123456"
         )
 
     def create_index(self, tableName,idColumn):
@@ -52,6 +57,8 @@ class databaseInit:
     def is_connected(self):
         if self.mydb.is_connected():
             print("DB connected!")
+        else:
+            print("DB is not connected!")
 
     def createDB(self, name):
         try:
@@ -165,7 +172,7 @@ class databaseInit:
         try:
             if self.mydb.is_connected():
                 cursor = self.mydb.cursor()
-                cursor.execute("SELECT " + selectColumn + " FROM " + tableName + " WHERE "+columnName + "=" + targetValue)
+                cursor.execute("SELECT " + selectColumn + " FROM " + tableName + " WHERE "+ columnName + "=" + targetValue)
                 # print("Selecting...")
                 return cursor.fetchall()
         except Error as e:
@@ -328,8 +335,10 @@ def insertTetramers():
         fileNum+=1
 
 if __name__ == '__main__':
-    insertTetramers() 
-
+    db = databaseInit()
+    db.is_connected()
+    db.useDB("humandb") 
+    print(db.search("*", "tetramerid","sequence","'SSSS'"))
     # uncomment to fix the delimiter
     # dirPath = r"D:\OutputFiles2\OutputFiles2\ProteinID"
     # outdir =  r'D:\OutputFiles2\OutputFiles2\ProteinIDFixed'

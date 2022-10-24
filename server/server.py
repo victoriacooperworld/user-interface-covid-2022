@@ -40,16 +40,7 @@ def ProcessData():
     
     return jsonify("Hi")
 
-@app.route("/SearchProtein/<searchProt>", methods = ['GET'])
-@cross_origin()
-def SearchProtein(searchProt):
-    print("Using SearchProtein()")
-    if not searchProt:
-        print("SearchProt doesnt exist")
-    else:
-        print(searchProt)
-    
-    return jsonify(searchProt + searchProt)
+
 
 
 
@@ -59,12 +50,12 @@ def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
     ###
     pass
 
-def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference, returnPearson = False):
+def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference, selectedDB, returnPearson = False):
 
     ###PLACEHOLDER TEST CODE
     filePath1 = os.path.join(uploads_dir1,os.listdir(uploads_dir1)[0])
     filePath2 = os.path.join(uploads_dir2,os.listdir(uploads_dir2)[0])
-    ret1 = HumanDB.check(filePath1, heapSize, positionsDifference)
+    ret1 = HumanDB.check(filePath1, heapSize, positionsDifference, selectedDB)
     # ret2 = HumanDB.check(filePath2, heapSize, positionsDifference)
     return ret1
     
@@ -103,10 +94,8 @@ def uploadTet():
     print("Using Tetramer Upload")
     returnPearson = bool(int(request.form.get('ReturnPearson')))
     print("Return pearson is ",returnPearson)
-    dbtouse = request.form.get("DB")
-    print("DB to use", dbtouse)
-    # uploads_dir1 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Pos'
-    # uploads_dir2 = '/Users/keanewong/Desktop/User-interface-covid2022/Uploads/Tet/Neg'
+    selectedDB = request.form.get("DB")
+    print("DB to use", selectedDB)
     uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
     uploads_dir2 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\NegOutput"
     ClrDirectory(uploads_dir1)
@@ -131,10 +120,7 @@ def uploadTet():
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
     
-    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff, returnPearson)
-
-
-
+    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff, selectedDB, returnPearson)
     return send_file(returnFile)
 
 
