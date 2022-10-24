@@ -100,8 +100,8 @@ def uploadTet():
     uploads_dir2 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\NegOutput"
     ClrDirectory(uploads_dir1)
     ClrDirectory(uploads_dir2)
-    uploaded_files1 = request.files.getlist('filePos')
-    uploaded_files2 = request.files.getlist('fileNeg')
+    uploaded_files1 = request.files.get('filePos')
+    uploaded_files2 = request.files.get('fileNeg')
     if 'filePos' not in request.files:
         print("No filePos sent")
     if 'fileNeg' not in request.files:
