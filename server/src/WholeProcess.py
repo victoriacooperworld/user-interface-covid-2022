@@ -74,7 +74,9 @@ if __name__ == '__main__':
     for i in ret:
         print(i)
     
-    
+#To be turned into a function for processpatient in server.py
+def ProcessPatientDir(dirPath, databaseName ):
+    pass
         
         
     

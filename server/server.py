@@ -1,9 +1,11 @@
+from distutils.command import upload
 import os
 from src.GenerateDB import HumanDB 
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, make_response, send_file
 from flask_cors import CORS, cross_origin
 import shutil, os
 app = Flask(__name__)
+cors = CORS(app)
 
 
 def ClrDirectory(folder):
@@ -46,17 +48,20 @@ def ProcessData():
 
 def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
     ###PLACEHOLDER TEST CODE
-    return os.listdir(uploads_dir1)[0]
+    
+    return ""
     ###
-    pass
 
-def ProcessTetramerData(uploads_dir1, uploads_dir2 , heapSize, positionsDifference, selectedDB, returnPearson = False):
+
+def ProcessTetramerData(uploaded_file1_Path, heapSize, positionsDifference, selectedDB, returnPearson = False):
 
     ###PLACEHOLDER TEST CODE
-    filePath1 = os.path.join(uploads_dir1,os.listdir(uploads_dir1)[0])
-    filePath2 = os.path.join(uploads_dir2,os.listdir(uploads_dir2)[0])
+    print(uploaded_file1_Path)
+    filePath1 = uploaded_file1_Path
+    print("Filepath 1 is", filePath1)
+
     ret1 = HumanDB.check(filePath1, heapSize, positionsDifference, selectedDB)
-    # ret2 = HumanDB.check(filePath2, heapSize, positionsDifference)
+    print('Ret is', ret1)
     return ret1
     
 
@@ -80,13 +85,16 @@ def uploadPatients():
     print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
     print("Saving in ", uploads_dir1)
     print("Saving in ", uploads_dir2)
+    
     for file in uploaded_files1:
+        # print("Going to ", os.path.join(uploads_dir1, file.filename.split('/')[1]))
         file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
     for file in uploaded_files2:
         file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
+    
     returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2) #a path
-
-    return jsonify({"Message":"Uploads completed"})
+    returnResponse = make_response(send_file(returnFile))
+    return returnResponse
 
 @app.route("/UploadsTet", methods=['POST'])
 @cross_origin()
@@ -97,33 +105,28 @@ def uploadTet():
     selectedDB = request.form.get("DB")
     print("DB to use", selectedDB)
     uploads_dir1 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\PosOutput"
-    uploads_dir2 = r"C:\Users\User\Desktop\PosNegTest\UploadFiles\NegOutput"
     ClrDirectory(uploads_dir1)
-    ClrDirectory(uploads_dir2)
-    uploaded_files1 = request.files.get('filePos')
-    uploaded_files2 = request.files.get('fileNeg')
+    uploaded_file1 = request.files.get('filePos')
+
     if 'filePos' not in request.files:
         print("No filePos sent")
-    if 'fileNeg' not in request.files:
-        print("No fileNeg sent")
-    print("Upload function called, uploading ", len(uploaded_files1), " positive to server")
-    print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
+    else:
+        print(request.files['filePos'])
+    print("Upload function called, uploading ", len(request.files), " file to server")
     print("Saving in ", uploads_dir1)
-    print("Saving in ", uploads_dir2)
     positionDiff = int(request.form.get("PositionDifference"))
     heapSize = int(request.form.get('HeapSize'))
 
     print("Position difference is ", positionDiff)
     print("Heap size is ", heapSize)
-    for file in uploaded_files1:
-        file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
-    for file in uploaded_files2:
-        file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
+    print("Saving at ",os.path.join(uploads_dir1, uploaded_file1.filename))
+    uploaded_file1.save(os.path.join(uploads_dir1, uploaded_file1.filename))
+    uploaded_file1_Path = os.path.join(uploads_dir1, uploaded_file1.filename)
+    returnFile = ProcessTetramerData(uploaded_file1_Path,  heapSize, positionDiff, selectedDB, returnPearson)
+    returnResponse = make_response(send_file(returnFile))
+
+    return returnResponse
     
-    returnFile = ProcessTetramerData(uploads_dir1, uploads_dir2, heapSize, positionDiff, selectedDB, returnPearson)
-    return send_file(returnFile)
-
-
 
 if(__name__) == "__main__":
     app.run(debug=True)

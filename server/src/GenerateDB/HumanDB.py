@@ -136,7 +136,7 @@ def check(inputPath, heap_size, pos_diff, selectedDB):
     
     res_protein = []
     returnFilePath = r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFile.csv"
-    file = open("server\OutputFiles\DictFile.txt","w")   
+    # file = open("C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFile.txt","w")   
     for pair in heap:
         tmp=[]
         pos_diff_res=[]
@@ -168,7 +168,7 @@ def check(inputPath, heap_size, pos_diff, selectedDB):
     df = pd.DataFrame(res_protein)
     df.to_csv(returnFilePath)
 
-    file.close()
+    # file.close()
 
     et = datetime.datetime.now()
 
@@ -177,9 +177,9 @@ def check(inputPath, heap_size, pos_diff, selectedDB):
     return returnFilePath
 
 
-inputPath = r"C:\Users\User\Desktop\Alzheimers\Top20.txt"
-heap_size  = 100
-pos_diff =  20
-selectedDB = 'humandb'
+# inputPath = r"C:\Users\User\Desktop\Alzheimers\Top20.txt"
+# heap_size  = 100
+# pos_diff =  20
+# selectedDB = 'humandb'
 
-check(inputPath, heap_size, pos_diff, selectedDB)
+# check(inputPath, heap_size, pos_diff, selectedDB)
