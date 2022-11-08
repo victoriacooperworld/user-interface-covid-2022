@@ -10,7 +10,7 @@ from tokenize import String
 import pandas as pd
 import mysql.connector 
 from mysql.connector import Error
-
+#This class has all the query functions to mysql database
         
 def FixDelimiters(dirPath, outputDir):
     for file in os.listdir(dirPath):
@@ -167,7 +167,7 @@ class databaseInit:
         except Error as e:
             print("Error while connecting to MySQL", e)
 
-
+    #select query
     def search(self, selectColumn, tableName, columnName, targetValue) -> String:
         try:
             if self.mydb.is_connected():
@@ -192,6 +192,8 @@ class databaseInit:
             print("Error while connecting to MySQL", e)
         finally:
             cursor.close()
+    
+    #concat query
     def concat(self, tableName, updateColumn, strConcat, columnName, targetValue):
         try:
             if self.mydb.is_connected():
@@ -208,6 +210,7 @@ class databaseInit:
         except Error as e:
             print("Trouble connecting to database: ", e)
     
+    #load data infile query for massive insertion
     def loadDataInfile(self, filePath, tableName):
         try:
             if self.mydb.is_connected():
@@ -227,7 +230,7 @@ class databaseInit:
             print("Trouble connecting to database: ", e)
 
                         
-
+   
     def insertDataFromTxt_Protein(self, file,tableName):
         self.useDB('Proteindb')
         with open(file) as f:
@@ -246,6 +249,7 @@ class databaseInit:
            
             f.close()
 
+    
     def insertDataFromTxt_Tetramer(self, file,tableName):
         tableName = "TetramerID"
         with open(file) as f:
@@ -264,7 +268,7 @@ class databaseInit:
 
             f.close()
     
-
+     #this function is for insert proteinID from txt files to database
     def insertProtein(self,inputDir):
         self.useDB("ProteinDB")
         self.createTable('ProteinID',"(Id varchar(10) , Description mediumtext, Sequence longTEXT)") 
@@ -277,7 +281,7 @@ class databaseInit:
             et = datetime.datetime.now()
             print("Time used for " + file + " is " + str(et-st))
 
-
+    #this function is for insert tetramerID from txt files to database
     def insertTetramer(self, inputDir):
 
         #This is a script that initializes the tetramer database

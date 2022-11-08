@@ -18,7 +18,12 @@ from DatabaseInit import databaseInit
 import pandas as pd
 
 
-
+'''
+HumanDB is a script to do the checkings on different database(human, viral, bacteria, etc.)
+For this function:
+constructDB(): use this to construct a database.
+check(): this is the function for pearson check part. Input params intro is inside the function
+'''
 class Protein:
     def __init__(self) -> None:
         self.seen = set()
@@ -47,7 +52,7 @@ class Protein:
 
 def constructDB():
     base_address = os.path.dirname(sys.path[0])
-    db = DatabaseInit.databaseInit()
+    db = databaseInit()
     # db.useDB("HumanDB")
     db.createDB("HumanDB")
 
@@ -92,6 +97,14 @@ def constructDB():
 
 
 def check(inputPath, heap_size, pos_diff, selectedDB):
+    """
+    inputs:
+    inputpath: significant tetramer file's directory.
+    heap_size: the size for the output proteins (could be 100,200,...)
+    pos_diff: for the significant tetramer, how close they are. (in order to discover adjacent tetramers)
+        eg. SSAL SALM (pos_diff = 1)
+    selectedDB: the database that is going to be queried from
+    """
     #input significant tetramers
     db = databaseInit()
 

@@ -10,8 +10,10 @@ import logging
 from mysql.connector import pooling
 
 def initialize_database():
-    #This is a script that initializes the tetramer database
-    #column names: sequence, probability, entries
+    """
+    This is a script that initializes the tetramer database
+    column names: sequence, probability, entries
+    """
 
 
     base_address = os.path.dirname(sys.path[0])

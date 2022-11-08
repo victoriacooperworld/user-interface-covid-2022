@@ -27,14 +27,11 @@ import datetime
 
 
 def createTotalDB_MP(importQueue, chunkSize = 1000):
-
     protCounter = 0
-    while (True):
-        
+    while (True):   
         curEntry  = importQueue.get()
         if curEntry is None:
             return 
-
         idNum = curEntry[0]
         header = curEntry[1]
         curSequence = curEntry[2]

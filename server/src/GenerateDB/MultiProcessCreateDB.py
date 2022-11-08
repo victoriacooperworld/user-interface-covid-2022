@@ -17,46 +17,52 @@ import STetramerNRlarge as STetramerNRlarge
 import DatabaseInit as DatabaseInit
 
 
-# from Bio import SeqIO
 
 base_address = os.path.dirname(sys.path[0])
-f88 = f"{base_address}\\InputFiles\\NR_Data\\f88.fna"
-f1k = f"{base_address}\\InputFiles\\NR_Data\\f1k.fna"
-first10000 = f"{base_address}\\InputFiles\\NR_Data\\First10000proteins_of_nr.fna"
-first200000 = f"{base_address}\\InputFiles\\NR_Data\\First200000proteins_of_nr.fna"
-f100k = f"{base_address}\\InputFiles\\NR_Data\\100k.fna"
-f2m = f"{base_address}\\InputFiles\\NR_Data\\f2m.fna"
-f1m = f"{base_address}\\InputFiles\\NR_Data\\f1m.fna"
-theBigBoy = r"E:\Non-redundantProteome\nr\nr"
-f500k =f"{base_address}\\InputFiles\\NR_Data\\f500k.fna"
+# f88 = f"{base_address}\\InputFiles\\NR_Data\\f88.fna"
+# f1k = f"{base_address}\\InputFiles\\NR_Data\\f1k.fna"
+# first10000 = f"{base_address}\\InputFiles\\NR_Data\\First10000proteins_of_nr.fna"
+# first200000 = f"{base_address}\\InputFiles\\NR_Data\\First200000proteins_of_nr.fna"
+# f100k = f"{base_address}\\InputFiles\\NR_Data\\100k.fna"
+# f2m = f"{base_address}\\InputFiles\\NR_Data\\f2m.fna"
+# f1m = f"{base_address}\\InputFiles\\NR_Data\\f1m.fna"
+# theBigBoy = r"E:\Non-redundantProteome\nr\nr"
+# f500k =f"{base_address}\\InputFiles\\NR_Data\\f500k.fna"
 
+"""
+This script is to calculate the position of each tetramer in different protein.
+It uses multiprocessing producer-consumer method to expedite the process
 
-
+output: txt files that have 160,000 rows for each tetramer, following with the entries
+entries format: (proteinID, tetramer position in this protein)
+"""
 
 def consumer_compute(work1,work2):
-
     totNum = 0
     while (True):  
         curEntry  = work1.get()
-        if curEntry == -1:
+        if curEntry == -1: # if it reached to the end
             work2.put(curEntry)
-            
             return 
 
         idNum = curEntry[0]
         header = curEntry[1]
         curSequence = curEntry[2]
 
-        # sequenceData = str(curSequence._seq)
+        # there are extra letters in the nr.gz file 
+        # replace these letters with the letters we already know
         sequenceData = curSequence.replace("X","Q")
         sequenceData = sequenceData.replace("J","L")
         sequenceData = sequenceData.replace("Z","Q")
         sequenceData = sequenceData.replace("U","A")
         sequenceData = sequenceData.replace("B","N")
 
+        #get description
         descript = header[1:-1]
         exportDict = collections.defaultdict(str)
+        # get the data: ID, protein description, protein sequence
         data = [str(idNum), descript, sequenceData]
+        # 
         work2.put(data, block = True)
         proteinIdStr = str(idNum)
 
@@ -64,8 +70,6 @@ def consumer_compute(work1,work2):
             curTetramer = str(sequenceData[i:i+4])
             curProtPos = '(' + proteinIdStr + ',' + str(i) + '),'
             exportDict[curTetramer] += curProtPos
-        # print(proteinIdStr)
-
         
         work2.put(exportDict, block = True)
 
@@ -110,7 +114,6 @@ def consumer_write_txt(work2, fixedDict, filename,numComputers, outputDir, chunk
     t = os.path.join(outputDir, "TetramerID")
     t = os.path.join(t,  basename.split('.')[0] + '.txt')
     protId = open(p,"w")
-
 
     # p = f'C:\\Users\\User\\Desktop\\covidProject-2022Summer\\OutputFiles\\ProteinID\\' + basename.split('.')[0] + '.txt'
     # t = f'C:\\Users\\User\\Desktop\\covidProject-2022Summer\\OutputFiles\\TetramerID\\' + basename.split('.')[0] + '.txt'
@@ -172,12 +175,6 @@ def mergeTxt(path1, path2, path3, deletePath1 = False, deletePath2 = False):
     f2 = open(path2, 'r')
     f3 = open(path3, 'w')
 
-    # f1lines = f1.readlines()
-    # f2lines = f2.readlines()
-
-
-    # for line1, line2 in zip(f1lines, f2lines):
-    #     f3.write("{}{}\n".format(line1.rstrip(),line2.rstrip()))
     for i in range(0,160000):
         line1 = f1.readline().strip("\n")
         line2 = f2.readline()
@@ -302,22 +299,21 @@ def MakeKeyColumn(path, tetDict):
     f.close()
 
 
-
-
-
 def process(file, res,  outputDir):
-
+    """
+    this funciton uses multiprocessing to get files processed with their proteinID and tetramer position.
+    There are 2 workers
+    """
     manager = multiprocessing.Manager()
     work1 = manager.Queue()
     work2 = manager.Queue()
     numCores = multiprocessing.cpu_count()
 
-    num_compute = 22
-    num_writer = 1
+    num_compute = 22 # 22 process to compute the postions
+    num_writer = 1 # 1 process to write to txt files
     
     pool = []
     logging.critical("Spawning processes")
-
 
     #create other computing process
     for i in range(0,num_writer):
@@ -327,36 +323,39 @@ def process(file, res,  outputDir):
 
 
     for i in range(0,num_compute):
-        p = multiprocessing.Process(target=consumer_compute, args=(work1,work2,))
-        p.start()
-        pool.append(p)
+        p = multiprocessing.Process(target=consumer_compute, args=(work1,work2,)) # construct a new process
+        p.start() # start the process
+        pool.append(p) # put the process in the connection pool
  
-
+    # get the index for the protein
+    # we divided nr.gz in to 4198 smaller files which contains 100,000 proteins in each file
+    # therefore each protein's id starts from the file number * 100,000
     fileNum = os.path.basename(file)
     fileNum = fileNum.strip("File")
     fileNum = fileNum.strip(".fna")
     fileNum = int(fileNum.strip(".txt"))
-    idNum = fileNum * 100000
+    idNum = fileNum * 100000 # proteinID start number
     
     try:
         st = datetime.datetime.now()
         print(st)
         
         with open(file) as f:
-            
             while (True):
                 header = f.readline()
                 seq = f.readline()
                 if not seq:
                     break         
                 entry = [idNum, header, seq]
+                # producer put the entry in work1 for consumer to process
                 work1.put(entry, block=True)
                 idNum +=1
 
     except StopIteration:
         pass
     print("Read in ", str(i), " lines")
-    # logging.critical("100 percent complete")
+    # after putting in everything in work1, put -1 so whatever which process get it
+    # the whole process could stop and join
     for process in pool:
         work1.put(-1)
     
@@ -378,8 +377,6 @@ def process(file, res,  outputDir):
 
 
 if __name__ == '__main__':
-    
-
     # print("Operating on ", numCores, " cores")  
     db = DatabaseInit.databaseInit()
     # db.createTable('ProteinID',"(Id int , Description mediumtext,Sequence longTEXT ,PRIMARY KEY (Id) )") 
@@ -388,13 +385,15 @@ if __name__ == '__main__':
     # db.createTable('TetramerID',"(Sequence VARCHAR(4), Probability VARCHAR(15), Entries longTEXT)")
     # db.create_index("tetramerid", "Sequence")
 
+
+    # generating a probability dictionary from a csv file for each amino acid
     path = f"{base_address}\..\InputFiles\Control.csv"
     controlDict = STetramerNRlarge.readFile(path)
+    # generate a tetramer table with probablity.
     res = STetramerNRlarge.generateTetramerStr(controlDict)
-
-    # dir = r"C:\Users\User\Desktop\covidProject-2022Summer\InputFiles\Test"
     
     # ------------------------------------------------------# 
+    # the directory is where the fasta files are
     dir = r"V:\Human\Human" 
     outputDir = r"V:\Human"
     SortedFiles = os.listdir(dir)
@@ -402,7 +401,8 @@ if __name__ == '__main__':
     for file in SortedFiles:
         print("Start process " + file)
         st = datetime.datetime.now()
-        process(os.path.join(dir,file), res, outputDir)
+        #call the multiprocessing function
+        process(os.path.join(dir,file), res, outputDir) #using multiprocessing to process the file
         et = datetime.datetime.now()
         print("Time used for " + file + " is " + str(et-st))
     # process(os.path.join(dir,file),res,outputDir)

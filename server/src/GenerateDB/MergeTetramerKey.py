@@ -9,7 +9,9 @@ import STetramerNRlarge
 import main
 
 
-
+"""
+This script is used for merging the tetramer name with the entries for later insertion
+"""
 
 
 base_address = os.path.dirname(sys.path[0])
