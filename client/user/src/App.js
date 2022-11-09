@@ -10,7 +10,7 @@ function App() {
 
     <div className="App">
       <Header/>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <OperationArea/>
       <Footer/>
       

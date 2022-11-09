@@ -10,7 +10,7 @@ from tokenize import String
 import pandas as pd
 import mysql.connector 
 from mysql.connector import Error
-
+#This class has all the query functions to mysql database
         
 def FixDelimiters(dirPath, outputDir):
     for file in os.listdir(dirPath):
@@ -37,9 +37,14 @@ class databaseInit:
     def __init__(self) -> None:
         self.mydb = mysql.connector.connect(
             #change the username and password to your own
-            host="localhost",
-            user="root",
-            password="123456"
+            host="database-human.cmp1ka38123m.us-west-1.rds.amazonaws.com",
+            user="cglabe",
+            password="123456789"
+
+            
+            # host = "localhost",
+            # user = "root",
+            # password = "123456"
         )
 
     def create_index(self, tableName,idColumn):
@@ -52,6 +57,8 @@ class databaseInit:
     def is_connected(self):
         if self.mydb.is_connected():
             print("DB connected!")
+        else:
+            print("DB is not connected!")
 
     def createDB(self, name):
         try:
@@ -160,12 +167,12 @@ class databaseInit:
         except Error as e:
             print("Error while connecting to MySQL", e)
 
-
+    #select query
     def search(self, selectColumn, tableName, columnName, targetValue) -> String:
         try:
             if self.mydb.is_connected():
                 cursor = self.mydb.cursor()
-                cursor.execute("SELECT " + selectColumn + " FROM " + tableName + " WHERE "+columnName + "=" + targetValue)
+                cursor.execute("SELECT " + selectColumn + " FROM " + tableName + " WHERE "+ columnName + "=" + targetValue)
                 # print("Selecting...")
                 return cursor.fetchall()
         except Error as e:
@@ -185,6 +192,8 @@ class databaseInit:
             print("Error while connecting to MySQL", e)
         finally:
             cursor.close()
+    
+    #concat query
     def concat(self, tableName, updateColumn, strConcat, columnName, targetValue):
         try:
             if self.mydb.is_connected():
@@ -201,6 +210,7 @@ class databaseInit:
         except Error as e:
             print("Trouble connecting to database: ", e)
     
+    #load data infile query for massive insertion
     def loadDataInfile(self, filePath, tableName):
         try:
             if self.mydb.is_connected():
@@ -220,7 +230,7 @@ class databaseInit:
             print("Trouble connecting to database: ", e)
 
                         
-
+   
     def insertDataFromTxt_Protein(self, file,tableName):
         self.useDB('Proteindb')
         with open(file) as f:
@@ -239,6 +249,7 @@ class databaseInit:
            
             f.close()
 
+    
     def insertDataFromTxt_Tetramer(self, file,tableName):
         tableName = "TetramerID"
         with open(file) as f:
@@ -257,7 +268,7 @@ class databaseInit:
 
             f.close()
     
-
+     #this function is for insert proteinID from txt files to database
     def insertProtein(self,inputDir):
         self.useDB("ProteinDB")
         self.createTable('ProteinID',"(Id varchar(10) , Description mediumtext, Sequence longTEXT)") 
@@ -270,7 +281,7 @@ class databaseInit:
             et = datetime.datetime.now()
             print("Time used for " + file + " is " + str(et-st))
 
-
+    #this function is for insert tetramerID from txt files to database
     def insertTetramer(self, inputDir):
 
         #This is a script that initializes the tetramer database
@@ -328,8 +339,10 @@ def insertTetramers():
         fileNum+=1
 
 if __name__ == '__main__':
-    insertTetramers() 
-
+    db = databaseInit()
+    db.is_connected()
+    db.useDB("humandb") 
+    print(db.search("*", "tetramerid","sequence","'SSSS'"))
     # uncomment to fix the delimiter
     # dirPath = r"D:\OutputFiles2\OutputFiles2\ProteinID"
     # outdir =  r'D:\OutputFiles2\OutputFiles2\ProteinIDFixed'

@@ -18,7 +18,12 @@ from DatabaseInit import databaseInit
 import pandas as pd
 
 
-
+'''
+HumanDB is a script to do the checkings on different database(human, viral, bacteria, etc.)
+For this function:
+constructDB(): use this to construct a database.
+check(): this is the function for pearson check part. Input params intro is inside the function
+'''
 class Protein:
     def __init__(self) -> None:
         self.seen = set()
@@ -47,7 +52,7 @@ class Protein:
 
 def constructDB():
     base_address = os.path.dirname(sys.path[0])
-    db = DatabaseInit.databaseInit()
+    db = databaseInit()
     # db.useDB("HumanDB")
     db.createDB("HumanDB")
 
@@ -91,10 +96,17 @@ def constructDB():
     insertProteins()
 
 
-def check(inputPath, heap_size, pos_diff):
+def check(inputPath, heap_size, pos_diff, selectedDB):
+    """
+    inputs:
+    inputpath: significant tetramer file's directory.
+    heap_size: the size for the output proteins (could be 100,200,...)
+    pos_diff: for the significant tetramer, how close they are. (in order to discover adjacent tetramers)
+        eg. SSAL SALM (pos_diff = 1)
+    selectedDB: the database that is going to be queried from
+    """
     #input significant tetramers
     db = databaseInit()
-    db.useDB("HumanDB")
 
     st = datetime.datetime.now()
     data = collections.defaultdict()
@@ -104,12 +116,13 @@ def check(inputPath, heap_size, pos_diff):
             if len(d)!=2: break
             data[d[0]]=d[1]
 
-    db.useDB("HumanDB")
+    db.useDB(selectedDB)
+    db.is_connected()
     proteinInfo = collections.defaultdict(Protein)
     for k,p in data.items(): #tetramers, p values
         #find significant proteins
         seq = "\'"+ k +"\'"
-        entries = str(db.search("entries","Tetramerid","sequence",seq)[0])
+        entries = str(db.search("entries","tetramerid","sequence",seq)[0])
         # print(entries)
         # entries=entries[3:-7]
         entry = entries.split("),(")
@@ -126,13 +139,8 @@ def check(inputPath, heap_size, pos_diff):
                 proteinInfo[proteinIdx].setSeen(k)
                 proteinInfo[proteinIdx].setP(float(p))
                 proteinInfo[proteinIdx].setPos((k,int(tetPos))) 
-               
-
     print("start sorting...")
-    result = []
     heap = []
-
-
     #find the smallest
     for k,v in proteinInfo.items():
         heapq.heappush(heap,(-v.pValue,k,v.positions))
@@ -141,17 +149,16 @@ def check(inputPath, heap_size, pos_diff):
     
     res_protein = []
     returnFilePath = r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFile.csv"
-    file = open("OutputFiles\DictFile.txt","w")   
+    # file = open("C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFile.txt","w")   
     for pair in heap:
-        
         tmp=[]
         pos_diff_res=[]
         idx = pair[1]
         pValue = -pair[0]
         pos = pair[2] 
         a = sorted(pos,key = lambda  x:x[1])
-        des = db.search("description","Proteinid","id",idx)[0]
-        length = len(str(db.search("sequence","Proteinid","id", idx)[0]))-7
+        des = db.search("description","proteinid","id",idx)[0]
+        length = len(str(db.search("sequence","proteinid","id", idx)[0]))-7
         tmp.append(pValue)
         tmp.append(length)
         tmp.append(pValue*length)
@@ -174,10 +181,18 @@ def check(inputPath, heap_size, pos_diff):
     df = pd.DataFrame(res_protein)
     df.to_csv(returnFilePath)
 
-    file.close()
+    # file.close()
 
     et = datetime.datetime.now()
 
     print("Time used:" + str(et-st))
 
     return returnFilePath
+
+
+# inputPath = r"C:\Users\User\Desktop\Alzheimers\Top20.txt"
+# heap_size  = 100
+# pos_diff =  20
+# selectedDB = 'humandb'
+
+# check(inputPath, heap_size, pos_diff, selectedDB)

@@ -12,6 +12,18 @@ import GenerateDB.STetramerNRlarge as STetramerNRlarge
 import GenerateDB.DatabaseInit as DatabaseInit
 import itertools 
 from Bio import SeqIO
+"""
+This function is used for divding the big file into smaller ones
+The input file we used was nr.gz - a fasta file that contains almost 420 million proteins
+The size is 218GB but it is too big and will cause memory issues.
+This function can make the bigger files into smaller ones.
+
+parameters:
+filePath: the file path of the orginal file
+outputPath: the path to save the divided files
+fileSize: how many proteins are there in a file
+"""
+
 
 def GenerateDivideFiles(filePath, outputPath, fileSize):
     record_iterator = SeqIO.parse(filePath,"fasta")

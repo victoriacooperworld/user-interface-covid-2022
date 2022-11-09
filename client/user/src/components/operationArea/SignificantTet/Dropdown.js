@@ -23,9 +23,9 @@ const DropdownMenu = (props) => {
             label="Database"
             onChange={handleChange}
         >
-            <MenuItem value={1}>Human</MenuItem>
-            <MenuItem value={2}>Viral</MenuItem>
-            <MenuItem value={3}>Non-redundant</MenuItem>
+            <MenuItem value={'humandb'}>Human</MenuItem>
+            <MenuItem value={'viral'}>Viral</MenuItem>
+            <MenuItem value={'nr'}>Non-redundant</MenuItem>
         </Select>
         </FormControl>
     )
