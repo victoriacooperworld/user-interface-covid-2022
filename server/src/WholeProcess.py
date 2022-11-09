@@ -6,6 +6,12 @@ from Patient import PatientProtein
 import GenerateDB.STetramerNRlarge as STetramerNRlarge
 import os
 import GenerateDB.DatabaseInit as DatabaseInit
+
+"""
+This program shows the whole process of 
+"""
+
+
 if __name__ == '__main__':
     # input = Input()
 
@@ -14,10 +20,12 @@ if __name__ == '__main__':
     # data = input.readFNAFile(inputPath,outputPath) 
     
 
-    #deal with the new merged file
+    # deal with patient input
+
+    # combine all the individual files
     dir = r'E:\COVID NGS 2022\FASTA\POS\ED'
     patientinput = Input()
-    data = patientinput.readFNAFile( dir, outputPath = None)
+    data = patientinput.readFNAFile( dir, outputPath = None) # readFNAFile in pateintinput class is to combine all the files
     #checking first and last data member
     print(data[0],data[-1])
     patientData = PatientProtein(data)
@@ -26,6 +34,7 @@ if __name__ == '__main__':
     # patientData.writeToCSV(os.path.join(outDir, 'Tetramers.csv'), sortOutput=True)
     # patientData.calculateExpectedProbability()
     significant_tetramers=[]
+    # cut off number is a variable to filter the non-significant tetramers
     cut_off = 10
     for tet in patientData.tetramers:
         #find significant tetramers
@@ -38,11 +47,15 @@ if __name__ == '__main__':
     proteinInfo = collections.defaultdict(int)
     for t in significant_tetramers:
         #find significant proteins
+
+        # get the tetramer's sequence
         seq = t[0]
-        entries = str(db.search("entries","Tetramerid","sequence",seq)[0])
+        # get the entries in tetramerID
+        entries = str(db.search("entries","Tetramerid","sequence",seq)[0]) 
         entry = entries.split('),(')
         entry[-1] = entry[-1][:-7] #fix the last element's form
 
+        # calculate the hit for each proteins
         for e in entry:
             e=e[3:]
             data = e.split(',')
