@@ -20,7 +20,7 @@ def form2Arrays(posDir, negDir):
     res = collections.defaultdict(float)
     for tet in pos.keys():
         if tet not in neg.keys():
-            print("Not in neg!")
+            print(tet + "Not in neg!")
             continue
         else:
             array1, array2 = pos[tet],neg[tet]
@@ -28,11 +28,6 @@ def form2Arrays(posDir, negDir):
             res[tet]=pValue
     return res
             
-
-    
-        
-   
-
 
 
 def readOneFile(path):
