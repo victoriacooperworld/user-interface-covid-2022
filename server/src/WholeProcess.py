@@ -9,7 +9,7 @@ import GenerateDB.DatabaseInit as DatabaseInit
 from scipy.stats import mannwhitneyu
 
 #reads in a directory of patient data and cuts off tetramers with less than a given number in frequency
-def ReadTetramersCutoff(dirName, cutoff=10):
+def ReadTetramersCutoff(dirName, cutoff=2):
     #deal with the new merged file
     dir = dirName
     patientinput = Input()
@@ -51,11 +51,15 @@ if __name__ == '__main__':
     proteinInfo = collections.defaultdict(int)
     for t in significant_tetramers:
         #find significant proteins
+
+        # get the tetramer's sequence
         seq = t[0]
-        entries = str(db.search("entries","Tetramerid","sequence",seq)[0])
+        # get the entries in tetramerID
+        entries = str(db.search("entries","Tetramerid","sequence",seq)[0]) 
         entry = entries.split('),(')
         entry[-1] = entry[-1][:-7] #fix the last element's form
 
+        # calculate the hit for each proteins
         for e in entry:
             e=e[3:]
             data = e.split(',')

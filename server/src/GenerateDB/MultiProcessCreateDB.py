@@ -62,15 +62,17 @@ def consumer_compute(work1,work2):
         exportDict = collections.defaultdict(str)
         # get the data: ID, protein description, protein sequence
         data = [str(idNum), descript, sequenceData]
-        # 
+        # put the result in work2 queue
         work2.put(data, block = True)
         proteinIdStr = str(idNum)
 
         for i in range(0,len(sequenceData) - 4):
+            # get the positions
             curTetramer = str(sequenceData[i:i+4])
             curProtPos = '(' + proteinIdStr + ',' + str(i) + '),'
             exportDict[curTetramer] += curProtPos
         
+        # put the 
         work2.put(exportDict, block = True)
 
         totNum +=1
