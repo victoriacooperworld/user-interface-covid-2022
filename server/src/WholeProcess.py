@@ -6,33 +6,46 @@ from Patient import PatientProtein
 import GenerateDB.STetramerNRlarge as STetramerNRlarge
 import os
 import GenerateDB.DatabaseInit as DatabaseInit
-if __name__ == '__main__':
-    # input = Input()
+from scipy.stats import mannwhitneyu
 
-    # outputPath = r'OutputFiles\total.fna'
-    # inputPath = r'Test\Part1TestData'
-    # data = input.readFNAFile(inputPath,outputPath) 
-    
-
+#reads in a directory of patient data and cuts off tetramers with less than a given number in frequency
+def ReadTetramersCutoff(dirName, cutoff=10):
     #deal with the new merged file
-    dir = r'E:\COVID NGS 2022\FASTA\POS\ED'
+    dir = dirName
     patientinput = Input()
     data = patientinput.readFNAFile( dir, outputPath = None)
-    #checking first and last data member
     print(data[0],data[-1])
     patientData = PatientProtein(data)
     patientData.countTetramers()
-    # outDir = r'E:\COVID NGS 2022\FASTA_OUTPUT\POS\ED'
-    # patientData.writeToCSV(os.path.join(outDir, 'Tetramers.csv'), sortOutput=True)
-    # patientData.calculateExpectedProbability()
-    significant_tetramers=[]
-    cut_off = 10
+    above_cutoff=[]
+    cut_off = cutoff
     for tet in patientData.tetramers:
         #find significant tetramers
         if patientData.tetramers[tet].freq<cut_off:
             continue
         else:
-            significant_tetramers.append([patientData.tetramers[tet].sequence,patientData.tetramers[tet].freq])
+            above_cutoff.append([patientData.tetramers[tet].sequence,patientData.tetramers[tet].freq])
+    return above_cutoff
+    
+
+def GetSignificant(Pos, Neg, method = 'MWU'):
+    res = mannwhitneyu(Pos,Neg, axis=2,alternative='two-sided')
+
+if __name__ == '__main__':
+
+    PosTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\AD')
+    NegTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\NC')
+
+    print(PosTets)
+    print(NegTets)
+    quit()
+    #INSERT CODE TO filter significant tetramers using mann whitney/etc
+    #and then correct by bonferroni and/or other for false discovery
+    significant_tetramers = MannWhitneyU()
+    ########
+
+
+    #This is the code used to create a list of proteins once we have the significant tetramers
     db = DatabaseInit.databaseInit()
     db.useDB("ProteinDB")
     proteinInfo = collections.defaultdict(int)
@@ -74,9 +87,9 @@ if __name__ == '__main__':
     for i in ret:
         print(i)
     
-#To be turned into a function for processpatient in server.py
-def ProcessPatientDir(dirPath, databaseName ):
-    pass
+
+    
+    
         
         
     

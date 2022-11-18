@@ -8,7 +8,7 @@ import {InputLabel} from '@mui/material'
 const DropdownMenu = (props) => {
     const [displaydb, setdisplaydb] = useState("Database")
     const handleChange = (event) =>{
-        console.log("Ye",event.target.value)
+        // console.log("Ye",event.target.value)
         props.parentCallback( event.target.value)
         setdisplaydb(String(event.target.value))
         
@@ -25,6 +25,7 @@ const DropdownMenu = (props) => {
         >
             <MenuItem value={'humandb'}>Human</MenuItem>
             <MenuItem value={'viral'}>Viral</MenuItem>
+            <MenuItem value={'bacteriadb'}>Bacterial</MenuItem>
             <MenuItem value={'nr'}>Non-redundant</MenuItem>
         </Select>
         </FormControl>

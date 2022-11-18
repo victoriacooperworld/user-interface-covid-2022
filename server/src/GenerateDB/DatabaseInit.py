@@ -5,7 +5,7 @@ import datetime
 import logging
 import os
 import sys
-import STetramerNRlarge
+# import STetramerNRlarge
 from tokenize import String
 import pandas as pd
 import mysql.connector 

@@ -16,6 +16,8 @@ const ProcessPatient = () =>{
     const fileChangeHandlerPos = (event) => {
 
         setfilePos(event.target.files[0]);
+        console.log(event.target.files[0]);
+        
         setFilePicked1(true);
         let newPatientData = []
         for (let i = 0; i < event.target.files.length; i++) 

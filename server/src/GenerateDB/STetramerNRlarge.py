@@ -18,7 +18,7 @@ import pandas as pd
 from Bio import SeqIO
 import numpy as np
 from Bio.SeqIO.FastaIO import SimpleFastaParser
-import DatabaseInit 
+import GenerateDB.DatabaseInit as DatabaseInit
 from multiprocessing import pool, cpu_count
 
 import datetime

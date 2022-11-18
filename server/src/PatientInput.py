@@ -12,7 +12,7 @@ class Input:
         self.exportData = collections.defaultdict(list)
         self.cutoffTable = []       #a list of pairs. each element is [size, cutoffValue]
 
-        path = r"InputFiles/Control.csv"
+        path = r"server\InputFiles\Control.csv"
         self.controlDict = STetramerNRlarge.readFile(path)
         self.tetDict = STetramerNRlarge.generateTetramerStr(self.controlDict)
 

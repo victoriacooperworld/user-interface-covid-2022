@@ -1,33 +1,235 @@
 ,0,1,2,3,4,5
-0,6.111e-09,644,3.935484e-06,"[('PLMH', 274), ('LMHI', 275)]","('XP_047284421.1 ATP-dependent DNA helicase DDX11 isoform X33 [Homo sapiens]',)","[('PLMH', 274), ('LMHI', 275)]"
-1,1.3420329999999998e-10,536,7.193296879999999e-08,"[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]","('NP_001268424.1 beta-catenin-like protein 1 isoform 2 [Homo sapiens]',)","[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]"
-2,1.3420329999999998e-10,563,7.555645789999999e-08,"[('AEFR', 225), ('KRHN', 296), ('RHNP', 297)]","('NP_110517.2 beta-catenin-like protein 1 isoform 1 [Homo sapiens]',)","[('AEFR', 225), ('KRHN', 296), ('RHNP', 297)]"
-3,8.749471499999999e-11,677,5.9233922054999994e-08,"[('AEFR', 579), ('EFRH', 580), ('VFFA', 595)]","('NP_001191232.1 amyloid-beta precursor protein isoform j precursor [Homo sapiens]',)","[('AEFR', 579), ('EFRH', 580), ('VFFA', 595)]"
-4,8.749471499999999e-11,660,5.774651189999999e-08,"[('AEFR', 562), ('EFRH', 563), ('VFFA', 578)]","('NP_001129603.1 amyloid-beta precursor protein isoform g [Homo sapiens]',)","[('AEFR', 562), ('EFRH', 563), ('VFFA', 578)]"
-5,1.3420329999999998e-10,453,6.079409489999999e-08,"[('AEFR', 115), ('KRHN', 186), ('RHNP', 187)]","('XP_011527219.1 beta-catenin-like protein 1 isoform X2 [Homo sapiens]',)","[('AEFR', 115), ('KRHN', 186), ('RHNP', 187)]"
-6,1.3420329999999998e-10,536,7.193296879999999e-08,"[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]","('XP_024307715.1 beta-catenin-like protein 1 isoform X1 [Homo sapiens]',)","[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]"
-7,8.749471499999999e-11,733,6.413362609499999e-08,"[('AEFR', 635), ('EFRH', 636), ('VFFA', 651)]","('NP_001191231.1 amyloid-beta precursor protein isoform i precursor [Homo sapiens]',)","[('AEFR', 635), ('EFRH', 636), ('VFFA', 651)]"
-8,8.749471499999999e-11,714,6.247122651e-08,"[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]","('NP_001129602.1 amyloid-beta precursor protein isoform f precursor [Homo sapiens]',)","[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]"
-9,8.749471499999999e-11,639,5.5909122884999995e-08,"[('AEFR', 541), ('EFRH', 542), ('VFFA', 557)]","('NP_001129601.1 amyloid-beta precursor protein isoform e precursor [Homo sapiens]',)","[('AEFR', 541), ('EFRH', 542), ('VFFA', 557)]"
-10,8.749471499999999e-11,770,6.737093054999999e-08,"[('AEFR', 672), ('EFRH', 673), ('VFFA', 688)]","('NP_000475.1 amyloid-beta precursor protein isoform a precursor [Homo sapiens]',)","[('AEFR', 672), ('EFRH', 673), ('VFFA', 688)]"
-11,8.749471499999999e-11,746,6.527105738999999e-08,"[('AEFR', 648), ('EFRH', 649), ('VFFA', 664)]","('NP_001129488.1 amyloid-beta precursor protein isoform d [Homo sapiens]',)","[('AEFR', 648), ('EFRH', 649), ('VFFA', 664)]"
-12,8.749471499999999e-11,751,6.570853096499999e-08,"[('AEFR', 653), ('EFRH', 654), ('VFFA', 669)]","('NP_958816.1 amyloid-beta precursor protein isoform b precursor [Homo sapiens]',)","[('AEFR', 653), ('EFRH', 654), ('VFFA', 669)]"
-13,3.07632e-12,682,2.09805024e-09,"[('HIKR', 391), ('IKRH', 392), ('KRHN', 393)]","('NP_001356465.1 BDNF/NT-3 growth factors receptor isoform h [Homo sapiens]',)","[('HIKR', 391), ('IKRH', 392), ('KRHN', 393)]"
-14,3.07632e-12,810,2.4918192e-09,"[('HIKR', 519), ('IKRH', 520), ('KRHN', 521)]","('NP_001356463.1 BDNF/NT-3 growth factors receptor isoform g precursor [Homo sapiens]',)","[('HIKR', 519), ('IKRH', 520), ('KRHN', 521)]"
-15,8.749471499999999e-11,695,6.080882692499999e-08,"[('AEFR', 597), ('EFRH', 598), ('VFFA', 613)]","('NP_958817.1 amyloid-beta precursor protein isoform c precursor [Homo sapiens]',)","[('AEFR', 597), ('EFRH', 598), ('VFFA', 613)]"
-16,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('NP_006171.2 BDNF/NT-3 growth factors receptor isoform a precursor [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-17,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_016870241.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
-18,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001018074.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
-19,3.07632e-12,666,2.04882912e-09,"[('HIKR', 375), ('IKRH', 376), ('KRHN', 377)]","('NP_001356464.1 BDNF/NT-3 growth factors receptor isoform i [Homo sapiens]',)","[('HIKR', 375), ('IKRH', 376), ('KRHN', 377)]"
-20,8.749471499999999e-11,752,6.579602568e-08,"[('AEFR', 654), ('EFRH', 655), ('VFFA', 670)]","('NP_001191230.1 amyloid-beta precursor protein isoform h precursor [Homo sapiens]',)","[('AEFR', 654), ('EFRH', 655), ('VFFA', 670)]"
-21,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001356461.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
-22,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_011517020.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
-23,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252061.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-24,8.749471499999999e-11,714,6.247122651e-08,"[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]","('NP_001372182.1 amyloid-beta precursor protein isoform k precursor [Homo sapiens]',)","[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]"
-25,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001356462.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
-26,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_047279389.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-27,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_047279388.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-28,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252058.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-29,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252060.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-30,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_016870240.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
-31,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_016870242.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+0,1.092e-07,5182,0.0005658744,"[('IKRH', 4252), ('GPLM', 4378)]","('XP_047272467.1 E3 ubiquitin-protein ligase UBR4 isoform X35 [Homo sapiens]',)","[('IKRH', 4252), ('GPLM', 4378)]"
+1,1.092e-07,5181,0.0005657652,"[('IKRH', 4251), ('GPLM', 4377)]","('XP_047272470.1 E3 ubiquitin-protein ligase UBR4 isoform X38 [Homo sapiens]',)","[('IKRH', 4251), ('GPLM', 4377)]"
+2,1.092e-07,5182,0.0005658744,"[('IKRH', 4252), ('GPLM', 4378)]","('XP_047272468.1 E3 ubiquitin-protein ligase UBR4 isoform X36 [Homo sapiens]',)","[('IKRH', 4252), ('GPLM', 4378)]"
+3,7.467500000000001e-08,8923,0.0006663250250000001,"[('LDSI', 5711), ('KRHN', 8914)]","('NP_001258152.2 obscurin isoform IC [Homo sapiens]',)",[]
+4,1.092e-07,5147,0.0005620524,"[('IKRH', 4217), ('GPLM', 4343)]","('XP_047272479.1 E3 ubiquitin-protein ligase UBR4 isoform X49 [Homo sapiens]',)","[('IKRH', 4217), ('GPLM', 4343)]"
+5,1.092e-07,5182,0.0005658744,"[('IKRH', 4252), ('GPLM', 4378)]","('XP_047272469.1 E3 ubiquitin-protein ligase UBR4 isoform X37 [Homo sapiens]',)","[('IKRH', 4252), ('GPLM', 4378)]"
+6,1.092e-07,5176,0.0005652192,"[('IKRH', 4246), ('GPLM', 4372)]","('XP_047272475.1 E3 ubiquitin-protein ligase UBR4 isoform X44 [Homo sapiens]',)","[('IKRH', 4246), ('GPLM', 4372)]"
+7,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('NP_006435.2 structural maintenance of chromosomes protein 2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+8,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_006716996.1 structural maintenance of chromosomes protein 2 isoform X1 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+9,7.004000000000001e-08,1365,9.560460000000002e-05,"[('HIKR', 720), ('LDSI', 819)]","('NP_001159586.1 patatin-like phospholipase domain-containing protein 6 isoform d [Homo sapiens]',)","[('HIKR', 720), ('LDSI', 819)]"
+10,7.969499999999999e-08,1349,0.00010750855499999998,"[('MHIM', 0), ('AEFR', 759)]","('XP_011535979.1 arf-GAP with Rho-GAP domain, ANK repeat and PH domain-containing protein 3 isoform X13 [Homo sapiens]',)",[]
+11,1.092e-07,5181,0.0005657652,"[('IKRH', 4251), ('GPLM', 4377)]","('XP_016856317.3 E3 ubiquitin-protein ligase UBR4 isoform X39 [Homo sapiens]',)","[('IKRH', 4251), ('GPLM', 4377)]"
+12,3.2445000000000004e-08,4586,0.00014879277,"[('LMHI', 1035), ('LDSI', 2816)]","('XP_006711798.1 dynein axonemal heavy chain 14 isoform X4 [Homo sapiens]',)",[]
+13,1.092e-07,5175,0.00056511,"[('IKRH', 4245), ('GPLM', 4371)]","('XP_047272476.1 E3 ubiquitin-protein ligase UBR4 isoform X45 [Homo sapiens]',)","[('IKRH', 4245), ('GPLM', 4371)]"
+14,3.2445000000000004e-08,4584,0.00014872788,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_016855785.1 dynein axonemal heavy chain 14 isoform X5 [Homo sapiens]',)",[]
+15,6.976799999999999e-08,4520,0.00031535136,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_016864666.1 dynein axonemal heavy chain 5 isoform X3 [Homo sapiens]',)",[]
+16,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('NP_001036015.1 structural maintenance of chromosomes protein 2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+17,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869695.1 structural maintenance of chromosomes protein 2 isoform X1 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+18,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_011516450.1 structural maintenance of chromosomes protein 2 isoform X1 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+19,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_047278602.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+20,7.004000000000001e-08,1300,9.105200000000001e-05,"[('HIKR', 655), ('LDSI', 754)]","('NP_001159584.1 patatin-like phospholipase domain-containing protein 6 isoform c [Homo sapiens]',)","[('HIKR', 655), ('LDSI', 754)]"
+21,3.2445000000000004e-08,4616,0.00014976612000000002,"[('LMHI', 1035), ('LDSI', 2846)]","('XP_011542360.1 dynein axonemal heavy chain 14 isoform X1 [Homo sapiens]',)",[]
+22,7.467500000000001e-08,7968,0.0005950104000000001,"[('LDSI', 4754), ('KRHN', 7959)]","('NP_001092093.2 obscurin isoform b [Homo sapiens]',)",[]
+23,1.092e-07,5180,0.000565656,"[('IKRH', 4250), ('GPLM', 4376)]","('XP_047272472.1 E3 ubiquitin-protein ligase UBR4 isoform X41 [Homo sapiens]',)","[('IKRH', 4250), ('GPLM', 4376)]"
+24,1.092e-07,5181,0.0005657652,"[('IKRH', 4251), ('GPLM', 4377)]","('XP_047272471.1 E3 ubiquitin-protein ligase UBR4 isoform X40 [Homo sapiens]',)","[('IKRH', 4251), ('GPLM', 4377)]"
+25,3.2445000000000004e-08,4441,0.000144088245,"[('LMHI', 859), ('LDSI', 2671)]","('XP_011542373.1 dynein axonemal heavy chain 14 isoform X17 [Homo sapiens]',)",[]
+26,3.2445000000000004e-08,4491,0.000145710495,"[('LMHI', 909), ('LDSI', 2721)]","('XP_011542372.1 dynein axonemal heavy chain 14 isoform X16 [Homo sapiens]',)",[]
+27,7.004000000000001e-08,1327,9.294308000000001e-05,"[('HIKR', 681), ('LDSI', 781)]","('NP_006693.3 patatin-like phospholipase domain-containing protein 6 isoform b [Homo sapiens]',)","[('HIKR', 681), ('LDSI', 781)]"
+28,1.092e-07,5149,0.0005622708,"[('IKRH', 4219), ('GPLM', 4345)]","('XP_047272477.1 E3 ubiquitin-protein ligase UBR4 isoform X46 [Homo sapiens]',)","[('IKRH', 4219), ('GPLM', 4345)]"
+29,3.2445000000000004e-08,4033,0.000130850685,"[('LMHI', 451), ('LDSI', 2263)]","('XP_011542375.1 dynein axonemal heavy chain 14 isoform X19 [Homo sapiens]',)",[]
+30,3.2445000000000004e-08,3823,0.000124037235,"[('LMHI', 241), ('LDSI', 2053)]","('XP_011542376.1 dynein axonemal heavy chain 14 isoform X21 [Homo sapiens]',)",[]
+31,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537946.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+32,3.2445000000000004e-08,4582,0.00014866299,"[('LMHI', 1035), ('LDSI', 2812)]","('XP_011542363.1 dynein axonemal heavy chain 14 isoform X6 [Homo sapiens]',)",[]
+33,6.976799999999999e-08,4295,0.00029965355999999997,"[('MHIK', 1576), ('VFFA', 2599)]","('XP_016864668.1 dynein axonemal heavy chain 5 isoform X4 [Homo sapiens]',)",[]
+34,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('NP_001036016.1 structural maintenance of chromosomes protein 2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+35,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869701.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+36,6.976799999999999e-08,4660,0.00032511887999999995,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_005248319.2 dynein axonemal heavy chain 5 isoform X1 [Homo sapiens]',)",[]
+37,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869697.1 structural maintenance of chromosomes protein 2 isoform X1 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+38,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_011516451.1 structural maintenance of chromosomes protein 2 isoform X1 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+39,7.004000000000001e-08,1197,8.383788000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('NP_001252531.1 structural maintenance of chromosomes protein 2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+40,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869700.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+41,7.004000000000001e-08,1049,7.347196000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_047278605.1 structural maintenance of chromosomes protein 2 isoform X5 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+42,7.004000000000001e-08,1327,9.294308000000001e-05,"[('HIKR', 681), ('LDSI', 781)]","('NP_001159585.1 patatin-like phospholipase domain-containing protein 6 isoform b [Homo sapiens]',)","[('HIKR', 681), ('LDSI', 781)]"
+43,3.2445000000000004e-08,4564,0.00014807898000000002,"[('LMHI', 1035), ('LDSI', 2794)]","('XP_011542365.1 dynein axonemal heavy chain 14 isoform X9 [Homo sapiens]',)",[]
+44,3.2445000000000004e-08,4596,0.00014911722,"[('LDSI', 517), ('LMHI', 3322)]","('XP_047286210.1 sacsin isoform X1 [Homo sapiens]',)",[]
+45,6.552000000000001e-08,2335,0.0001529892,"[('IKRH', 880), ('NWFP', 1716)]","('XP_024306305.1 pre-mRNA-processing-splicing factor 8 isoform X1 [Homo sapiens]',)",[]
+46,6.789999999999999e-08,598,4.060419999999999e-05,"[('GPLM', 580), ('PLMH', 581)]","('NP_001128206.1 uncharacterized protein C1orf94 isoform a [Homo sapiens]',)","[('GPLM', 580), ('PLMH', 581)]"
+47,7.004000000000001e-08,261,1.828044e-05,"[('LDSI', 160), ('HIKR', 200)]","('NP_872387.2 spermatogenesis-associated protein 46 [Homo sapiens]',)","[('LDSI', 160), ('HIKR', 200)]"
+48,1.092e-07,5180,0.000565656,"[('IKRH', 4250), ('GPLM', 4376)]","('XP_047272473.1 E3 ubiquitin-protein ligase UBR4 isoform X42 [Homo sapiens]',)","[('IKRH', 4250), ('GPLM', 4376)]"
+49,7.467500000000001e-08,8925,0.0006664743750000001,"[('LDSI', 5711), ('KRHN', 8916)]","('NP_001373054.1 obscurin isoform c [Homo sapiens]',)",[]
+50,7.004000000000001e-08,1375,9.630500000000002e-05,"[('HIKR', 729), ('LDSI', 829)]","('NP_001159583.1 patatin-like phospholipase domain-containing protein 6 isoform a [Homo sapiens]',)","[('HIKR', 729), ('LDSI', 829)]"
+51,3.2445000000000004e-08,4536,0.00014717052000000002,"[('LDSI', 457), ('LMHI', 3262)]","('XP_047286216.1 sacsin isoform X9 [Homo sapiens]',)",[]
+52,2.1216e-08,2112,4.4808192e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280778.1 ankyrin repeat domain-containing protein 26 isoform X1 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+53,3.2445000000000004e-08,4579,0.000148565655,"[('LDSI', 509), ('LMHI', 3305)]","('NP_055178.3 sacsin isoform 1 [Homo sapiens]',)",[]
+54,3.2445000000000004e-08,4432,0.00014379624,"[('LDSI', 362), ('LMHI', 3158)]","('NP_001264984.1 sacsin isoform 2 [Homo sapiens]',)",[]
+55,3.2445000000000004e-08,4601,0.00014927944500000003,"[('LMHI', 1035), ('LDSI', 2831)]","('XP_011542361.1 dynein axonemal heavy chain 14 isoform X2 [Homo sapiens]',)",[]
+56,3.2445000000000004e-08,4178,0.00013555521000000001,"[('LMHI', 596), ('LDSI', 2408)]","('XP_011542374.1 dynein axonemal heavy chain 14 isoform X18 [Homo sapiens]',)",[]
+57,1.092e-07,5148,0.0005621616,"[('IKRH', 4218), ('GPLM', 4344)]","('XP_016856319.3 E3 ubiquitin-protein ligase UBR4 isoform X47 [Homo sapiens]',)","[('IKRH', 4218), ('GPLM', 4344)]"
+58,2.1216e-08,633,1.3429728e-05,"[('HIKR', 10), ('IKRH', 11)]","('NP_004473.2 polypeptide N-acetylgalactosaminyltransferase 3 [Homo sapiens]',)","[('HIKR', 10), ('IKRH', 11)]"
+59,2.4254999999999998e-08,1298,3.1482989999999996e-05,"[('LMHI', 909), ('AEFR', 1255)]","('XP_047296933.1 transient receptor potential cation channel subfamily M member 2 isoform X3 [Homo sapiens]',)",[]
+60,8.568e-09,2970,2.544696e-05,"[('LMHI', 594), ('HIKR', 2884)]","('XP_011532591.1 TPR and ankyrin repeat-containing protein 1 isoform X1 [Homo sapiens]',)",[]
+61,6.111e-09,1006,6.147666e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_005253388.1 ATP-dependent DNA helicase DDX11 isoform X12 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+62,8.568e-09,2961,2.5369847999999997e-05,"[('LMHI', 585), ('HIKR', 2875)]","('XP_047305283.1 TPR and ankyrin repeat-containing protein 1 isoform X2 [Homo sapiens]',)",[]
+63,8.568e-09,2970,2.544696e-05,"[('LMHI', 594), ('HIKR', 2884)]","('XP_047305281.1 TPR and ankyrin repeat-containing protein 1 isoform X1 [Homo sapiens]',)",[]
+64,8.568e-09,2912,2.4950015999999997e-05,"[('LMHI', 536), ('HIKR', 2826)]","('XP_047305284.1 TPR and ankyrin repeat-containing protein 1 isoform X4 [Homo sapiens]',)",[]
+65,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537942.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+66,1.8496e-08,1815,3.3570239999999995e-05,"[('MHIK', 231), ('HIKR', 751)]","('NP_001139661.1 zinc finger protein 407 isoform 2 [Homo sapiens]',)",[]
+67,3.2445000000000004e-08,4561,0.00014798164500000002,"[('LMHI', 1035), ('LDSI', 2791)]","('XP_011542366.1 dynein axonemal heavy chain 14 isoform X10 [Homo sapiens]',)",[]
+68,6.111e-09,957,5.848227e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284408.1 ATP-dependent DNA helicase DDX11 isoform X16 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+69,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281018.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+70,6.976799999999999e-08,4544,0.00031702579199999995,"[('MHIK', 1825), ('VFFA', 2848)]","('XP_047272842.1 dynein axonemal heavy chain 5 isoform X2 [Homo sapiens]',)",[]
+71,3.2445000000000004e-08,4541,0.00014733274500000002,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_011542369.1 dynein axonemal heavy chain 14 isoform X13 [Homo sapiens]',)",[]
+72,6.976799999999999e-08,3960,0.00027628128,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_016864670.1 dynein axonemal heavy chain 5 isoform X6 [Homo sapiens]',)",[]
+73,6.976799999999999e-08,3023,0.00021090866399999997,"[('MHIK', 304), ('VFFA', 1327)]","('XP_016864674.1 dynein axonemal heavy chain 5 isoform X9 [Homo sapiens]',)",[]
+74,6.976799999999999e-08,3809,0.00026574631199999997,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_016864671.1 dynein axonemal heavy chain 5 isoform X7 [Homo sapiens]',)",[]
+75,3.2445000000000004e-08,4565,0.00014811142500000001,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_011542364.1 dynein axonemal heavy chain 14 isoform X8 [Homo sapiens]',)",[]
+76,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_047278600.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+77,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_011516453.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+78,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_011516452.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+79,3.2445000000000004e-08,4578,0.00014853321,"[('LMHI', 1035), ('LDSI', 2808)]","('XP_016855786.1 dynein axonemal heavy chain 14 isoform X7 [Homo sapiens]',)",[]
+80,6.789999999999999e-08,451,3.0622899999999994e-05,"[('GPLM', 19), ('PLMH', 20)]","('NP_002690.3 POU domain, class 3, transcription factor 1 [Homo sapiens]',)","[('GPLM', 19), ('PLMH', 20)]"
+81,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_047278603.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+82,7.004000000000001e-08,1115,7.809460000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_047278604.1 structural maintenance of chromosomes protein 2 isoform X3 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+83,3.2445000000000004e-08,4553,0.00014772208500000002,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_011542367.1 dynein axonemal heavy chain 14 isoform X11 [Homo sapiens]',)",[]
+84,7.004000000000001e-08,726,5.084904000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_024303151.1 structural maintenance of chromosomes protein 2 isoform X6 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+85,6.976799999999999e-08,4624,0.000322607232,"[('MHIK', 1905), ('VFFA', 2928)]","('NP_001360.1 dynein axonemal heavy chain 5 [Homo sapiens]',)",[]
+86,6.111e-09,720,4.39992e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874428.2 ATP-dependent DNA helicase DDX11 isoform X30 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+87,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537948.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+88,6.111e-09,706,4.314366e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284420.1 ATP-dependent DNA helicase DDX11 isoform X31 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+89,6.111e-09,644,3.935484e-06,"[('PLMH', 274), ('LMHI', 275)]","('XP_047284421.1 ATP-dependent DNA helicase DDX11 isoform X33 [Homo sapiens]',)","[('PLMH', 274), ('LMHI', 275)]"
+90,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281023.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+91,3.2445000000000004e-08,4588,0.00014885766,"[('LDSI', 509), ('LMHI', 3314)]","('XP_005266395.1 sacsin isoform X2 [Homo sapiens]',)",[]
+92,3.2445000000000004e-08,4545,0.00014746252500000002,"[('LMHI', 1035), ('LDSI', 2775)]","('XP_011542368.1 dynein axonemal heavy chain 14 isoform X12 [Homo sapiens]',)",[]
+93,6.552000000000001e-08,2335,0.0001529892,"[('IKRH', 880), ('NWFP', 1716)]","('NP_006436.3 pre-mRNA-processing-splicing factor 8 [Homo sapiens]',)",[]
+94,3.2445000000000004e-08,4585,0.000148760325,"[('LDSI', 506), ('LMHI', 3311)]","('XP_011533341.1 sacsin isoform X4 [Homo sapiens]',)",[]
+95,3.2445000000000004e-08,4504,0.00014613228,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_047301580.1 dynein axonemal heavy chain 14 isoform X14 [Homo sapiens]',)",[]
+96,3.2445000000000004e-08,4530,0.00014697585000000003,"[('LDSI', 460), ('LMHI', 3256)]","('XP_047286217.1 sacsin isoform X10 [Homo sapiens]',)",[]
+97,1.092e-07,5179,0.0005655467999999999,"[('IKRH', 4249), ('GPLM', 4375)]","('XP_047272474.1 E3 ubiquitin-protein ligase UBR4 isoform X43 [Homo sapiens]',)","[('IKRH', 4249), ('GPLM', 4375)]"
+98,3.2445000000000004e-08,4539,0.00014726785500000002,"[('LDSI', 460), ('LMHI', 3265)]","('XP_047286213.1 sacsin isoform X7 [Homo sapiens]',)",[]
+99,3.2445000000000004e-08,4592,0.00014898744,"[('LMHI', 1035), ('LDSI', 2822)]","('XP_016855784.1 dynein axonemal heavy chain 14 isoform X3 [Homo sapiens]',)",[]
+100,7.004000000000001e-08,223,1.5618920000000002e-05,"[('LDSI', 122), ('HIKR', 162)]","('XP_005245160.1 spermatogenesis-associated protein 46 isoform X1 [Homo sapiens]',)","[('LDSI', 122), ('HIKR', 162)]"
+101,3.2445000000000004e-08,4617,0.00014979856500000002,"[('LMHI', 1035), ('LDSI', 2847)]","('NP_001354408.1 dynein axonemal heavy chain 14 isoform 7 [Homo sapiens]',)",[]
+102,5.2359999999999994e-08,1219,6.382683999999999e-05,"[('HIKR', 387), ('AEFR', 805)]","('NP_001295076.1 pleckstrin homology domain-containing family G member 3 [Homo sapiens]',)",[]
+103,2.1216e-08,2071,4.3938336e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280780.1 ankyrin repeat domain-containing protein 26 isoform X4 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+104,2.1216e-08,2112,4.4808192e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280777.1 ankyrin repeat domain-containing protein 26 isoform X1 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+105,2.1216e-08,2108,4.4723327999999996e-05,"[('HIKR', 806), ('IKRH', 807)]","('XP_016871418.1 ankyrin repeat domain-containing protein 26 isoform X2 [Homo sapiens]',)","[('HIKR', 806), ('IKRH', 807)]"
+106,2.1216e-08,2062,4.3747392e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_011517718.1 ankyrin repeat domain-containing protein 26 isoform X5 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+107,2.1216e-08,1037,2.2000992e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280789.1 ankyrin repeat domain-containing protein 26 isoform X13 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+108,2.1216e-08,2031,4.3089696e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_016871421.1 ankyrin repeat domain-containing protein 26 isoform X6 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+109,2.1216e-08,2031,4.3089696e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_006717488.1 ankyrin repeat domain-containing protein 26 isoform X6 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+110,2.1216e-08,1975,4.19016e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280782.1 ankyrin repeat domain-containing protein 26 isoform X7 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+111,2.1216e-08,633,1.3429728e-05,"[('HIKR', 10), ('IKRH', 11)]","('XP_011509231.1 polypeptide N-acetylgalactosaminyltransferase 3 isoform X1 [Homo sapiens]',)","[('HIKR', 10), ('IKRH', 11)]"
+112,3.2445000000000004e-08,3888,0.00012614616,"[('LMHI', 1035), ('LDSI', 2847)]","('XP_016855787.1 dynein axonemal heavy chain 14 isoform X20 [Homo sapiens]',)",[]
+113,1.8496e-08,1630,3.014848e-05,"[('MHIK', 231), ('HIKR', 751)]","('XP_006722563.1 zinc finger protein 407 isoform X4 [Homo sapiens]',)",[]
+114,1.8496e-08,2248,4.1579008e-05,"[('MHIK', 231), ('HIKR', 751)]","('NP_001371404.1 zinc finger protein 407 isoform 1 [Homo sapiens]',)",[]
+115,6.789999999999999e-08,408,2.7703199999999996e-05,"[('GPLM', 390), ('PLMH', 391)]","('NP_116273.2 uncharacterized protein C1orf94 isoform b [Homo sapiens]',)","[('GPLM', 390), ('PLMH', 391)]"
+116,1.092e-07,5148,0.0005621616,"[('IKRH', 4218), ('GPLM', 4344)]","('XP_047272478.1 E3 ubiquitin-protein ligase UBR4 isoform X48 [Homo sapiens]',)","[('IKRH', 4218), ('GPLM', 4344)]"
+117,6.111e-09,1031,6.300441e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_011518894.1 ATP-dependent DNA helicase DDX11 isoform X8 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+118,1.8496e-08,2248,4.1579008e-05,"[('MHIK', 231), ('HIKR', 751)]","('NP_060227.2 zinc finger protein 407 isoform 1 [Homo sapiens]',)",[]
+119,6.111e-09,1021,6.239331e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284404.1 ATP-dependent DNA helicase DDX11 isoform X10 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+120,3.07632e-12,810,2.4918192e-09,"[('HIKR', 519), ('IKRH', 520), ('KRHN', 521)]","('NP_001356463.1 BDNF/NT-3 growth factors receptor isoform g precursor [Homo sapiens]',)","[('HIKR', 519), ('IKRH', 520), ('KRHN', 521)]"
+121,6.111e-09,991,6.056001e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874418.2 ATP-dependent DNA helicase DDX11 isoform X11 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+122,8.568e-09,2961,2.5369847999999997e-05,"[('LMHI', 585), ('HIKR', 2875)]","('XP_047305282.1 TPR and ankyrin repeat-containing protein 1 isoform X2 [Homo sapiens]',)",[]
+123,3.07632e-12,666,2.04882912e-09,"[('HIKR', 375), ('IKRH', 376), ('KRHN', 377)]","('NP_001356464.1 BDNF/NT-3 growth factors receptor isoform i [Homo sapiens]',)","[('HIKR', 375), ('IKRH', 376), ('KRHN', 377)]"
+124,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001356462.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+125,6.111e-09,1006,6.147666e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_047284405.1 ATP-dependent DNA helicase DDX11 isoform X12 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+126,3.07632e-12,682,2.09805024e-09,"[('HIKR', 391), ('IKRH', 392), ('KRHN', 393)]","('NP_001356465.1 BDNF/NT-3 growth factors receptor isoform h [Homo sapiens]',)","[('HIKR', 391), ('IKRH', 392), ('KRHN', 393)]"
+127,6.111e-09,979,5.982669e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874419.2 ATP-dependent DNA helicase DDX11 isoform X13 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+128,8.568e-09,2747,2.3536296e-05,"[('LMHI', 371), ('HIKR', 2661)]","('XP_047305286.1 TPR and ankyrin repeat-containing protein 1 isoform X6 [Homo sapiens]',)",[]
+129,6.111e-09,996,6.086556e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284406.1 ATP-dependent DNA helicase DDX11 isoform X14 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+130,8.568e-09,2904,2.4881472e-05,"[('LMHI', 528), ('HIKR', 2818)]","('XP_047305285.1 TPR and ankyrin repeat-containing protein 1 isoform X5 [Homo sapiens]',)",[]
+131,6.111e-09,967,5.909337e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_047284407.1 ATP-dependent DNA helicase DDX11 isoform X15 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+132,8.568e-09,2936,2.5155647999999998e-05,"[('LMHI', 560), ('HIKR', 2850)]","('XP_016863059.1 TPR and ankyrin repeat-containing protein 1 isoform X3 [Homo sapiens]',)",[]
+133,6.111e-09,967,5.909337e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_006719113.1 ATP-dependent DNA helicase DDX11 isoform X15 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+134,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_011517020.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+135,6.111e-09,942,5.756562e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_005253390.1 ATP-dependent DNA helicase DDX11 isoform X17 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+136,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_024303709.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+137,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001356461.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+138,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('NP_001018074.1 BDNF/NT-3 growth factors receptor isoform c precursor [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+139,6.111e-09,942,5.756562e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_047284409.1 ATP-dependent DNA helicase DDX11 isoform X17 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+140,8.749471499999999e-11,714,6.247122651e-08,"[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]","('NP_001129602.1 amyloid-beta precursor protein isoform f precursor [Homo sapiens]',)","[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]"
+141,6.111e-09,932,5.695452e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284410.1 ATP-dependent DNA helicase DDX11 isoform X18 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+142,6.976799999999999e-08,4272,0.000298048896,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_016864669.1 dynein axonemal heavy chain 5 isoform X5 [Homo sapiens]',)",[]
+143,6.111e-09,904,5.524344e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284411.1 ATP-dependent DNA helicase DDX11 isoform X19 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+144,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537943.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+145,6.111e-09,894,5.463234e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284412.1 ATP-dependent DNA helicase DDX11 isoform X20 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+146,6.976799999999999e-08,3071,0.00021425752799999998,"[('MHIK', 1941), ('VFFA', 2964)]","('XP_016864673.1 dynein axonemal heavy chain 5 isoform X8 [Homo sapiens]',)",[]
+147,6.111e-09,892,5.451012e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_011518897.1 ATP-dependent DNA helicase DDX11 isoform X23 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+148,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281017.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+149,6.111e-09,882,5.389902e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284414.1 ATP-dependent DNA helicase DDX11 isoform X22 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+150,6.976799999999999e-08,2874,0.00020051323199999998,"[('MHIK', 155), ('VFFA', 1178)]","('XP_016864675.1 dynein axonemal heavy chain 5 isoform X10 [Homo sapiens]',)",[]
+151,6.111e-09,891,5.444901e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284413.1 ATP-dependent DNA helicase DDX11 isoform X21 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+152,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281019.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+153,6.111e-09,892,5.451012e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_047284415.1 ATP-dependent DNA helicase DDX11 isoform X23 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+154,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869698.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+155,6.111e-09,1055,6.447105e-06,"[('PLMH', 561), ('LMHI', 562)]","('XP_016874411.1 ATP-dependent DNA helicase DDX11 isoform X5 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+156,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281020.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+157,6.111e-09,854,5.218794e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284416.1 ATP-dependent DNA helicase DDX11 isoform X24 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+158,7.004000000000001e-08,1147,8.033588000000002e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_016869699.1 structural maintenance of chromosomes protein 2 isoform X2 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+159,6.111e-09,857,5.237127e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284417.1 ATP-dependent DNA helicase DDX11 isoform X25 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+160,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537947.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+161,6.111e-09,847,5.176017e-06,"[('PLMH', 353), ('LMHI', 354)]","('XP_047284418.1 ATP-dependent DNA helicase DDX11 isoform X26 [Homo sapiens]',)","[('PLMH', 353), ('LMHI', 354)]"
+162,1.3420329999999998e-10,453,6.079409489999999e-08,"[('AEFR', 115), ('KRHN', 186), ('RHNP', 187)]","('XP_011527219.1 beta-catenin-like protein 1 isoform X2 [Homo sapiens]',)","[('AEFR', 115), ('KRHN', 186), ('RHNP', 187)]"
+163,6.111e-09,768,4.693248e-06,"[('PLMH', 274), ('LMHI', 275)]","('XP_016874424.1 ATP-dependent DNA helicase DDX11 isoform X27 [Homo sapiens]',)","[('PLMH', 274), ('LMHI', 275)]"
+164,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537945.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+165,6.111e-09,768,4.693248e-06,"[('PLMH', 274), ('LMHI', 275)]","('XP_016874425.1 ATP-dependent DNA helicase DDX11 isoform X27 [Homo sapiens]',)","[('PLMH', 274), ('LMHI', 275)]"
+166,7.004000000000001e-08,1099,7.697396000000001e-05,"[('MHIK', 0), ('LDSI', 41)]","('XP_011516455.1 structural maintenance of chromosomes protein 2 isoform X4 [Homo sapiens]',)","[('MHIK', 0), ('LDSI', 41)]"
+167,6.111e-09,768,4.693248e-06,"[('PLMH', 274), ('LMHI', 275)]","('XP_016874426.1 ATP-dependent DNA helicase DDX11 isoform X27 [Homo sapiens]',)","[('PLMH', 274), ('LMHI', 275)]"
+168,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537944.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+169,6.111e-09,724,4.424364e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_047284419.1 ATP-dependent DNA helicase DDX11 isoform X28 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+170,5.2359999999999994e-08,440,2.3038399999999996e-05,"[('AEFR', 265), ('MHIK', 404)]","('NP_001171070.1 succinate--CoA ligase [GDP-forming] subunit beta, mitochondrial isoform 1 precursor [Homo sapiens]',)","[('AEFR', 265), ('MHIK', 404)]"
+171,6.111e-09,723,4.418253e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874427.2 ATP-dependent DNA helicase DDX11 isoform X29 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+172,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281021.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+173,8.749471499999999e-11,770,6.737093054999999e-08,"[('AEFR', 672), ('EFRH', 673), ('VFFA', 688)]","('NP_000475.1 amyloid-beta precursor protein isoform a precursor [Homo sapiens]',)","[('AEFR', 672), ('EFRH', 673), ('VFFA', 688)]"
+174,1.3420329999999998e-10,536,7.193296879999999e-08,"[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]","('XP_024307715.1 beta-catenin-like protein 1 isoform X1 [Homo sapiens]',)","[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]"
+175,6.111e-09,649,3.966039e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_011518899.2 ATP-dependent DNA helicase DDX11 isoform X32 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+176,8.749471499999999e-11,733,6.413362609499999e-08,"[('AEFR', 635), ('EFRH', 636), ('VFFA', 651)]","('NP_001191231.1 amyloid-beta precursor protein isoform i precursor [Homo sapiens]',)","[('AEFR', 635), ('EFRH', 636), ('VFFA', 651)]"
+177,8.749471499999999e-11,677,5.9233922054999994e-08,"[('AEFR', 579), ('EFRH', 580), ('VFFA', 595)]","('NP_001191232.1 amyloid-beta precursor protein isoform j precursor [Homo sapiens]',)","[('AEFR', 579), ('EFRH', 580), ('VFFA', 595)]"
+178,8.749471499999999e-11,746,6.527105738999999e-08,"[('AEFR', 648), ('EFRH', 649), ('VFFA', 664)]","('NP_001129488.1 amyloid-beta precursor protein isoform d [Homo sapiens]',)","[('AEFR', 648), ('EFRH', 649), ('VFFA', 664)]"
+179,8.749471499999999e-11,752,6.579602568e-08,"[('AEFR', 654), ('EFRH', 655), ('VFFA', 670)]","('NP_001191230.1 amyloid-beta precursor protein isoform h precursor [Homo sapiens]',)","[('AEFR', 654), ('EFRH', 655), ('VFFA', 670)]"
+180,1.3420329999999998e-10,563,7.555645789999999e-08,"[('AEFR', 225), ('KRHN', 296), ('RHNP', 297)]","('NP_110517.2 beta-catenin-like protein 1 isoform 1 [Homo sapiens]',)","[('AEFR', 225), ('KRHN', 296), ('RHNP', 297)]"
+181,8.749471499999999e-11,714,6.247122651e-08,"[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]","('NP_001372182.1 amyloid-beta precursor protein isoform k precursor [Homo sapiens]',)","[('AEFR', 616), ('EFRH', 617), ('VFFA', 632)]"
+182,1.3420329999999998e-10,536,7.193296879999999e-08,"[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]","('NP_001268424.1 beta-catenin-like protein 1 isoform 2 [Homo sapiens]',)","[('AEFR', 198), ('KRHN', 269), ('RHNP', 270)]"
+183,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_047281022.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+184,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('NP_001243548.2 coiled-coil domain-containing protein R3HCC1L isoform 1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+185,3.2445000000000004e-08,4588,0.00014885766,"[('LDSI', 509), ('LMHI', 3314)]","('XP_024305105.1 sacsin isoform X2 [Homo sapiens]',)",[]
+186,8.749471499999999e-11,660,5.774651189999999e-08,"[('AEFR', 562), ('EFRH', 563), ('VFFA', 578)]","('NP_001129603.1 amyloid-beta precursor protein isoform g [Homo sapiens]',)","[('AEFR', 562), ('EFRH', 563), ('VFFA', 578)]"
+187,8.568e-09,792,6.785855999999999e-06,"[('LMHI', 597), ('MHIK', 598)]","('XP_011537950.1 coiled-coil domain-containing protein R3HCC1L isoform X1 [Homo sapiens]',)","[('LMHI', 597), ('MHIK', 598)]"
+188,3.2445000000000004e-08,4587,0.000148825215,"[('LDSI', 517), ('LMHI', 3313)]","('XP_047286211.1 sacsin isoform X3 [Homo sapiens]',)",[]
+189,8.749471499999999e-11,639,5.5909122884999995e-08,"[('AEFR', 541), ('EFRH', 542), ('VFFA', 557)]","('NP_001129601.1 amyloid-beta precursor protein isoform e precursor [Homo sapiens]',)","[('AEFR', 541), ('EFRH', 542), ('VFFA', 557)]"
+190,1.5132e-08,1105,1.672086e-05,"[('IKRH', 187), ('PLMH', 999)]","('NP_003065.3 SWI/SNF complex subunit SMARCC1 [Homo sapiens]',)",[]
+191,3.2445000000000004e-08,4538,0.00014723541000000002,"[('LDSI', 468), ('LMHI', 3264)]","('XP_047286215.1 sacsin isoform X8 [Homo sapiens]',)",[]
+192,6.111e-09,856,5.231016e-06,"[('PLMH', 561), ('LMHI', 562)]","('NP_004390.3 ATP-dependent DNA helicase DDX11 isoform 2 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+193,1.8496e-08,1660,3.070336e-05,"[('MHIK', 231), ('HIKR', 751)]","('XP_011524372.1 zinc finger protein 407 isoform X3 [Homo sapiens]',)",[]
+194,2.1216e-08,2112,4.4808192e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_016871417.1 ankyrin repeat domain-containing protein 26 isoform X1 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+195,3.2445000000000004e-08,4527,0.00014687851500000003,"[('LDSI', 457), ('LMHI', 3253)]","('XP_047286219.1 sacsin isoform X11 [Homo sapiens]',)",[]
+196,8.749471499999999e-11,751,6.570853096499999e-08,"[('AEFR', 653), ('EFRH', 654), ('VFFA', 669)]","('NP_958816.1 amyloid-beta precursor protein isoform b precursor [Homo sapiens]',)","[('AEFR', 653), ('EFRH', 654), ('VFFA', 669)]"
+197,8.749471499999999e-11,695,6.080882692499999e-08,"[('AEFR', 597), ('EFRH', 598), ('VFFA', 613)]","('NP_958817.1 amyloid-beta precursor protein isoform c precursor [Homo sapiens]',)","[('AEFR', 597), ('EFRH', 598), ('VFFA', 613)]"
+198,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_016870240.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+199,8.568e-09,2925,2.5061399999999997e-05,"[('LMHI', 549), ('HIKR', 2839)]","('NP_055646.2 TPR and ankyrin repeat-containing protein 1 isoform 2 [Homo sapiens]',)",[]
+200,3.2445000000000004e-08,4539,0.00014726785500000002,"[('LDSI', 460), ('LMHI', 3265)]","('XP_047286214.1 sacsin isoform X7 [Homo sapiens]',)",[]
+201,8.568e-09,2969,2.5438392e-05,"[('LMHI', 593), ('HIKR', 2883)]","('NP_001316927.1 TPR and ankyrin repeat-containing protein 1 isoform 1 [Homo sapiens]',)",[]
+202,3.2445000000000004e-08,4530,0.00014697585000000003,"[('LDSI', 460), ('LMHI', 3256)]","('XP_047286218.1 sacsin isoform X10 [Homo sapiens]',)",[]
+203,6.111e-09,1091,6.667101e-06,"[('PLMH', 597), ('LMHI', 598)]","('XP_016874408.1 ATP-dependent DNA helicase DDX11 isoform X1 [Homo sapiens]',)","[('PLMH', 597), ('LMHI', 598)]"
+204,3.2445000000000004e-08,4579,0.000148565655,"[('LDSI', 509), ('LMHI', 3305)]","('XP_047286212.1 sacsin isoform X5 [Homo sapiens]',)",[]
+205,3.2445000000000004e-08,4576,0.00014846832,"[('LDSI', 506), ('LMHI', 3302)]","('XP_016876028.1 sacsin isoform X6 [Homo sapiens]',)",[]
+206,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_047279388.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+207,6.111e-09,1081,6.605991e-06,"[('PLMH', 587), ('LMHI', 588)]","('XP_047284403.1 ATP-dependent DNA helicase DDX11 isoform X2 [Homo sapiens]',)","[('PLMH', 587), ('LMHI', 588)]"
+208,1.8496e-08,1750,3.2368e-05,"[('MHIK', 231), ('HIKR', 751)]","('XP_016881327.1 zinc finger protein 407 isoform X1 [Homo sapiens]',)",[]
+209,2.1216e-08,2072,4.3959552e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_006717486.1 ankyrin repeat domain-containing protein 26 isoform X3 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+210,1.8496e-08,1660,3.070336e-05,"[('MHIK', 231), ('HIKR', 751)]","('NP_001139662.1 zinc finger protein 407 isoform 3 [Homo sapiens]',)",[]
+211,6.111e-09,1043,6.373773e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874410.2 ATP-dependent DNA helicase DDX11 isoform X4 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+212,2.1216e-08,2062,4.3747392e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280781.1 ankyrin repeat domain-containing protein 26 isoform X5 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+213,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252060.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+214,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252058.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+215,6.111e-09,1055,6.447105e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874409.2 ATP-dependent DNA helicase DDX11 isoform X3 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+216,6.111e-09,906,5.536566e-06,"[('PLMH', 561), ('LMHI', 562)]","('NP_085911.2 ATP-dependent DNA helicase DDX11 isoform 1 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+217,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_016870241.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+218,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_005252061.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+219,6.111e-09,1055,6.447105e-06,"[('PLMH', 561), ('LMHI', 562)]","('XP_016874414.1 ATP-dependent DNA helicase DDX11 isoform X5 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+220,2.1216e-08,1656,3.5133696e-05,"[('HIKR', 810), ('IKRH', 811)]","('XP_047280787.1 ankyrin repeat domain-containing protein 26 isoform X11 [Homo sapiens]',)","[('HIKR', 810), ('IKRH', 811)]"
+221,3.07632e-12,822,2.52873504e-09,"[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]","('XP_016870242.1 BDNF/NT-3 growth factors receptor isoform X2 [Homo sapiens]',)","[('HIKR', 531), ('IKRH', 532), ('KRHN', 533)]"
+222,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('XP_047279389.1 BDNF/NT-3 growth factors receptor isoform X1 [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"
+223,6.111e-09,1021,6.239331e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874415.2 ATP-dependent DNA helicase DDX11 isoform X6 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+224,2.1216e-08,401,8.507616e-06,"[('HIKR', 10), ('IKRH', 11)]","('XP_047299839.1 polypeptide N-acetylgalactosaminyltransferase 3 isoform X2 [Homo sapiens]',)","[('HIKR', 10), ('IKRH', 11)]"
+225,2.1216e-08,633,1.3429728e-05,"[('HIKR', 10), ('IKRH', 11)]","('XP_005246506.1 polypeptide N-acetylgalactosaminyltransferase 3 isoform X1 [Homo sapiens]',)","[('HIKR', 10), ('IKRH', 11)]"
+226,1.8496e-08,1688,3.1221247999999996e-05,"[('MHIK', 231), ('HIKR', 751)]","('XP_011524371.1 zinc finger protein 407 isoform X2 [Homo sapiens]',)",[]
+227,6.111e-09,1018,6.220998e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874416.2 ATP-dependent DNA helicase DDX11 isoform X7 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+228,6.111e-09,880,5.3776800000000005e-06,"[('PLMH', 535), ('LMHI', 536)]","('NP_001244074.1 ATP-dependent DNA helicase DDX11 isoform 4 [Homo sapiens]',)","[('PLMH', 535), ('LMHI', 536)]"
+229,6.111e-09,970,5.9276700000000005e-06,"[('PLMH', 561), ('LMHI', 562)]","('NP_001244073.1 ATP-dependent DNA helicase DDX11 isoform 3 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+230,6.111e-09,970,5.9276700000000005e-06,"[('PLMH', 561), ('LMHI', 562)]","('NP_689651.1 ATP-dependent DNA helicase DDX11 isoform 3 [Homo sapiens]',)","[('PLMH', 561), ('LMHI', 562)]"
+231,6.111e-09,1004,6.135444e-06,"[('PLMH', 574), ('LMHI', 575)]","('XP_016874417.2 ATP-dependent DNA helicase DDX11 isoform X9 [Homo sapiens]',)","[('PLMH', 574), ('LMHI', 575)]"
+232,2.1216e-08,633,1.3429728e-05,"[('HIKR', 10), ('IKRH', 11)]","('XP_016859259.1 polypeptide N-acetylgalactosaminyltransferase 3 isoform X1 [Homo sapiens]',)","[('HIKR', 10), ('IKRH', 11)]"
+233,3.07632e-12,838,2.57795616e-09,"[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]","('NP_006171.2 BDNF/NT-3 growth factors receptor isoform a precursor [Homo sapiens]',)","[('HIKR', 547), ('IKRH', 548), ('KRHN', 549)]"

@@ -10,11 +10,8 @@ import HelpIcon from '@mui/icons-material/Help';
 import CheckPCC from './CheckBox.js'
 const SignificantTetramers = () =>{
     const [tetFilePos,settetfilePos] = useState();
-    const [tetFileNeg,settetfileNeg] = useState();
     const [tetFilePicked1, setTetFilePicked1] = useState(false);
-    const [tetFilePicked2, setTetFilePicked2] = useState(false);
     const [tetramerDatasPos,setTetramerDatasPos] = useState([]);
-    const [tetramerDatasNeg,setTetramerDatasNeg] = useState([]);
     var tetramerHeapSize = 0;
     var positionDifference = 0;
     const [loadingTet, setLoadingTet] = useState(false);
@@ -28,29 +25,23 @@ const SignificantTetramers = () =>{
     
     const TetChangeHandlerPos = (event) => {
         settetfilePos(event.target.files[0]);
+        console.log(event.target.files[0]);
         setTetFilePicked1(true);
         for (let i = 0; i < event.target.files.length; i++) {
             setTetramerDatasPos(result => result.concat(event.target.files[i]))
         }
-       
-    };
-    const TetChangeHandlerNeg = (event) => {
-        settetfileNeg(event.target.files[0]);
-        setTetFilePicked2(true);
-        for (let i = 0; i < event.target.files.length; i++) {
-            setTetramerDatasNeg(result => result.concat(event.target.files[i]))
-        }
 
     };
+
 
     /* Handles file submission to server */
     const TetSubmitHandler = (event) => {
         event.preventDefault();
         tetramerHeapSize = event.target.HeapSize.value
         positionDifference = event.target.PositionDifference.value
-        if(!tetFilePicked1 || !tetFilePicked2){
+        if(!tetFilePicked1 ){
             //PSUEDO CODE: NEED TO THROW VISIBLE ERROR
-            console.log("ERROR: One of the files were not set")
+            console.log("ERROR: File was not set")
             return
         }
         if(tetramerHeapSize <= 0 || positionDifference <= 0){
@@ -65,9 +56,7 @@ const SignificantTetramers = () =>{
         for (let i =0; i < tetramerDatasPos.length;i++){
             data.append("filePos",tetramerDatasPos[i])
         }
-        for (let i =0; i < tetramerDatasNeg.length;i++){
-            data.append("fileNeg",tetramerDatasNeg[i])
-        }
+
         data.append("PositionDifference", positionDifference)
         data.append("HeapSize", tetramerHeapSize)
         data.append("ReturnPearson", checked ? 1 : 0)
@@ -77,12 +66,13 @@ const SignificantTetramers = () =>{
             fetch('http://localhost:5000/UploadsTet',{
                 method: "POST",
                 body: data
+
             }).then((response) =>
                 response.blob()
             ).then((res)=>{
                 console.log(res)
                 const url = URL.createObjectURL(res)
-                const filename = 'Downloadd'
+                const filename = 'Downloadd.csv'
                 let a = document.createElement("a");
                 document.body.appendChild(a)
                 a.style = "display: none"

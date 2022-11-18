@@ -24,8 +24,6 @@ export const FileUploader = ({buttonText, callBack}) => {
           onChange={callBack}
           style={{display: 'none'}} 
           accept = '.fna, .txt'
-          webkitdirectory = "" 
-          directory = ""
         />
       </div>
     )
