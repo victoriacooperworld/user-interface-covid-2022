@@ -107,7 +107,6 @@ class Input:
         indexes = []
 
 
-
         for fileName, sequenceList in self.exportData.items():
             sequenceEntries = []
             freqList = []
