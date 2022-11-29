@@ -7,12 +7,13 @@ import collections
 
 import GenerateDB.STetramerNRlarge as STetramerNRlarge
 
+CONTROL_PATH = r"InputFiles/Control.csv"
 class Input:
     def __init__(self) -> None: 
         self.exportData = collections.defaultdict(list)
         self.cutoffTable = []       #a list of pairs. each element is [size, cutoffValue]
 
-        path = r"server\InputFiles\Control.csv"
+        path = CONTROL_PATH
         self.controlDict = STetramerNRlarge.readFile(path)
         self.tetDict = STetramerNRlarge.generateTetramerStr(self.controlDict)
 

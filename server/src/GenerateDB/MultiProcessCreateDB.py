@@ -19,15 +19,11 @@ import DatabaseInit as DatabaseInit
 
 
 base_address = os.path.dirname(sys.path[0])
-# f88 = f"{base_address}\\InputFiles\\NR_Data\\f88.fna"
-# f1k = f"{base_address}\\InputFiles\\NR_Data\\f1k.fna"
-# first10000 = f"{base_address}\\InputFiles\\NR_Data\\First10000proteins_of_nr.fna"
-# first200000 = f"{base_address}\\InputFiles\\NR_Data\\First200000proteins_of_nr.fna"
-# f100k = f"{base_address}\\InputFiles\\NR_Data\\100k.fna"
-# f2m = f"{base_address}\\InputFiles\\NR_Data\\f2m.fna"
-# f1m = f"{base_address}\\InputFiles\\NR_Data\\f1m.fna"
-# theBigBoy = r"E:\Non-redundantProteome\nr\nr"
-# f500k =f"{base_address}\\InputFiles\\NR_Data\\f500k.fna"
+NUM_COMPUTE = 22
+NUM_WRITER = 1
+CONTROL_PATH = f"{base_address}\..\InputFiles\Control.csv"
+INPUT_DIR = r"V:\Human\Human" 
+OUTPUT_DIR = r"V:\Human"
 
 """
 This script is to calculate the position of each tetramer in different protein.
@@ -145,13 +141,7 @@ def consumer_write_txt(work2, fixedDict, filename,numComputers, outputDir, chunk
 
 
         if isinstance(data, list):
-            # TODO: insert into proteinid
-            # print("Insert into protein table")
-
             protId.write('|'.join(data))
-
-            
-        
 
         else:
             # TODO: insert into tetramerid
@@ -198,7 +188,8 @@ def mergeTxt(path1, path2, path3, deletePath1 = False, deletePath2 = False):
     timetotal = et-st
     print("Time taken for merge was ", timetotal)
 
-def mergeTxt_mp(curDirectory, deleteOriginals = False):
+# merge files multi-processly, but didn't use this function
+def mergeTxt_mp(curDirectory, deleteOriginals = False): 
     while(True):
         path1 = curDirectory.get()
         if(path1 == -1):
@@ -217,13 +208,6 @@ def mergeTxt_mp(curDirectory, deleteOriginals = False):
         f1 = open(path1, 'r')
         f2 = open(path2, 'r')
         f3 = open(path3, 'w')
-
-        # f1lines = f1.readlines()
-        # f2lines = f2.readlines()
-
-
-        # for line1, line2 in zip(f1lines, f2lines):
-        #     f3.write("{}{}\n".format(line1.rstrip(),line2.rstrip()))
 
         for i in range(0,160000):
             line1 = f1.readline().strip("\n")
@@ -311,8 +295,8 @@ def process(file, res,  outputDir):
     work2 = manager.Queue()
     numCores = multiprocessing.cpu_count()
 
-    num_compute = 22 # 22 process to compute the postions
-    num_writer = 1 # 1 process to write to txt files
+    num_compute = NUM_COMPUTE # 22 process to compute the postions
+    num_writer = NUM_WRITER # 1 process to write to txt files
     
     pool = []
     logging.critical("Spawning processes")
@@ -389,15 +373,15 @@ if __name__ == '__main__':
 
 
     # generating a probability dictionary from a csv file for each amino acid
-    path = f"{base_address}\..\InputFiles\Control.csv"
+    path = CONTROL_PATH
     controlDict = STetramerNRlarge.readFile(path)
     # generate a tetramer table with probablity.
     res = STetramerNRlarge.generateTetramerStr(controlDict)
     
     # ------------------------------------------------------# 
     # the directory is where the fasta files are
-    dir = r"V:\Human\Human" 
-    outputDir = r"V:\Human"
+    dir = INPUT_DIR
+    outputDir = OUTPUT_DIR
     SortedFiles = os.listdir(dir)
     SortedFiles.sort()
     for file in SortedFiles:

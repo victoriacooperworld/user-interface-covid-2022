@@ -136,7 +136,7 @@ def readOneFile(path, cutoff = 0):
         tetramers[key]/=total
     return tetramers
 
-#NOTEE: DOES NOT alter tetdict, returns an adjusted copy of tetdict
+# NOTE: DOES NOT alter tetdict, returns an adjusted copy of tetdict
 def FalseDiscoveryCorrection(tetDict, method = 'fdr_tsbky'):
     print('method is', method)
     newDict = tetDict
