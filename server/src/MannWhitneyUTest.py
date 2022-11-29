@@ -186,6 +186,48 @@ def sortTets(tetDict, method = 'getStatistict'):
     return arr
 
 
+#The main function used
+def getSigTets(posDir,negDir, numReturns,cutoff = 0):
+    res = form2Arrays(posDir,negDir, cutoff=cutoff)
+
+    numSig = 0
+    for tet, value in res.items():
+        if value[1] < .05:
+            numSig+=1
+        if len(value) != 2:
+            print("ERROR: MISSING STATISTIC OR PVALUE: ", value) 
+    
+    print("Number of significant tet before correction: ", numSig)
+    
+    correctedRes = FalseDiscoveryCorrection(res, method = 'fdr_tsbky')
+    #all significant tets
+    numSig=0
+    # finalList = list(correctedRes.items())
+    sortedTets = sortTets(correctedRes, method = 'getStatistic')
+
+    #purging out only the significant q valued tetramers
+    significantTetsOnly = []
+    for entry in sortedTets:
+        if entry[1][2] > 0.05:
+            continue
+        else:
+            significantTetsOnly.append(entry)
+    sortedTets = significantTetsOnly
+
+    #outputting to a csv
+    outputList = []
+    for tetEntry in sortedTets:
+        outputList.append([tetEntry[0],tetEntry[1][0],tetEntry[1][1],tetEntry[1][2] ])
+    # df = pd.DataFrame(outputList, columns = ['Tetramer', 'Statistic by AD', 'P Value', 'Q Value']).set_index('Tetramer')
+    # df.to_csv('/Users/keanewong/Desktop/Kmer/AD_NC/ADNC_SigTetramers.csv')
+    outputList2 = []
+    for i in range (0,20):
+        tetEntry = sortedTets[i]
+        outputList2.append([tetEntry[0],tetEntry[1][2]])
+    return outputList2
+
+
+
 if __name__ == '__main__':
     res = form2Arrays('/Users/keanewong/Desktop/Kmer/AD_NC/Positive','/Users/keanewong/Desktop/Kmer/AD_NC/Negative', cutoff=0)
 

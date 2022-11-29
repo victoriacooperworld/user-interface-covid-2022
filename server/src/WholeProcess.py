@@ -5,6 +5,7 @@ from PatientInput import Input
 from Patient import PatientProtein
 import GenerateDB.STetramerNRlarge as STetramerNRlarge
 import os
+import MannWhitneyUTest as mwut
 import GenerateDB.DatabaseInit as DatabaseInit
 from scipy.stats import mannwhitneyu
 
@@ -33,22 +34,26 @@ def GetSignificant(Pos, Neg, method = 'MWU'):
 
 if __name__ == '__main__':
 
-    PosTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\AD')
-    NegTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\NC')
+    # PosTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\AD')
+    # NegTets = ReadTetramersCutoff(r'C:\Users\User\Desktop\Alzheimers\NC')
 
-    print(PosTets)
-    print(NegTets)
-    quit()
+    # print(PosTets)
+    # print(NegTets)
+    # quit()
+
     #INSERT CODE TO filter significant tetramers using mann whitney/etc
     #and then correct by bonferroni and/or other for false discovery
-    significant_tetramers = MannWhitneyU()
+    sigTets = significant_tetramers = mwut.getSigTets(r'C:\Users\User\Desktop\Alzheimers\AD',r'C:\Users\User\Desktop\Alzheimers\NC', 20, cutoff = 0)
+    print(sigTets)
+
     ########
 
 
     #This is the code used to create a list of proteins once we have the significant tetramers
     db = DatabaseInit.databaseInit()
-    db.useDB("ProteinDB")
+    db.useDB("HumanDB")
     proteinInfo = collections.defaultdict(int)
+    #significant_tetramers should have elements in type [tet,qvalue]
     for t in significant_tetramers:
         #find significant proteins
 
