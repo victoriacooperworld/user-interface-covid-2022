@@ -7,6 +7,9 @@ from GenerateDB.DatabaseInit import databaseInit
 from Patient import TetramerInfo
 import matplotlib.pyplot as plt
 
+"""
+This is a script for plotting, but in the later version of the program we don't use it anymore.
+"""
 class tPlotInfo():
     def __init__(self, info: TetramerInfo, pos: int) -> None:
         self.info = info
