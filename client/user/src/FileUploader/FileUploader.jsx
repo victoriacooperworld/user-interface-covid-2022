@@ -7,7 +7,7 @@ import { HiArrowSmUp } from "react-icons/hi";
 import './FileUploader.css'
 import { Button } from '@mui/material';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-export const FileUploader = ({buttonText, callBack}) => {
+export const FileUploader = ({buttonText, callBack, multipleFiles}) => {
     const hiddenFileInput = React.useRef(null);
     const handleClick = event => {
         hiddenFileInput.current.click();
@@ -24,8 +24,19 @@ export const FileUploader = ({buttonText, callBack}) => {
           onChange={callBack}
           style={{display: 'none'}} 
           accept = '.fna, .txt'
+          multiple = {multipleFiles}
         />
       </div>
     )
 
+ };
+
+function callBackDefault(){
+  console.log("Default response no calllback set")
+}
+
+ FileUploader.defaultProps = {
+  buttonText: 'Default Texst',
+  eyeColor: callBackDefault,
+  multipleFiles : ""
  }

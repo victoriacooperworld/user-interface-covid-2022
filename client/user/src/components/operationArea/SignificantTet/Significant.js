@@ -14,9 +14,11 @@ const SignificantTetramers = () =>{
     const [tetramerDatasPos,setTetramerDatasPos] = useState([]);
     var tetramerHeapSize = 0;
     var positionDifference = 0;
+
     const [loadingTet, setLoadingTet] = useState(false);
     const [checked, setChecked] = useState(false);
     const [DB, setDB] = useState("")
+    const [showAdvanced, setShowAdvanced] = useState(false)
 
     const handleDB = (childData) =>{
         setDB(childData)
@@ -37,8 +39,14 @@ const SignificantTetramers = () =>{
     /* Handles file submission to server */
     const TetSubmitHandler = (event) => {
         event.preventDefault();
-        tetramerHeapSize = event.target.HeapSize.value
-        positionDifference = event.target.PositionDifference.value
+        positionDifference  = event.target.PositionDifference.value;
+        tetramerHeapSize    = event.target.HeapSize.value;
+
+        // checked = event.target.CheckPCC
+        positionDifference = positionDifference == "" ? 100 : positionDifference;
+        tetramerHeapSize = tetramerHeapSize == "" ? 25 : tetramerHeapSize;
+
+
         if(!tetFilePicked1 ){
             //PSUEDO CODE: NEED TO THROW VISIBLE ERROR
             console.log("ERROR: File was not set")
@@ -56,12 +64,12 @@ const SignificantTetramers = () =>{
         for (let i =0; i < tetramerDatasPos.length;i++){
             data.append("filePos",tetramerDatasPos[i])
         }
-
+        // setChecked(!checked)
         data.append("PositionDifference", positionDifference)
         data.append("HeapSize", tetramerHeapSize)
         data.append("ReturnPearson", checked ? 1 : 0)
         data.append("DB", DB);
-        console.log(positionDifference, tetramerHeapSize)
+        console.log(positionDifference, tetramerHeapSize, checked, DB)
         try{
             fetch('http://localhost:5000/UploadsTet',{
                 method: "POST",
@@ -109,7 +117,7 @@ const SignificantTetramers = () =>{
                         event.preventDefault();
                     }
                     else{
-                        tetramerHeapSize = event.target.value
+                        // tetramerHeapSize = event.target.value
                     }
                 }}></input>
       
@@ -124,7 +132,7 @@ const SignificantTetramers = () =>{
                         event.preventDefault();
                     }
                     else{
-                        positionDifference = event.target.value
+                        // positionDifference = event.target.value
                     }
                 }}>
                 </input>
@@ -135,7 +143,7 @@ const SignificantTetramers = () =>{
            
             <div className = 'pearsonCheckWrap'>
                 <h5 className="pearsonCheck"></h5>
-                <CheckPCC/>
+                <CheckPCC onClickBox = {setChecked}/>
                 <div className = "pearsonCBWrapper">
                     <div className="textFieldHelp" data-hover="Relates significant tetramers to one another on a -1 to 1 scale">
                         <HelpIcon ></HelpIcon>
@@ -145,7 +153,7 @@ const SignificantTetramers = () =>{
             </div>
             <DropdownMenu parentCallback = {handleDB}/>
             <Button className="buttonSubmit" type="submit" disabled = {loadingTet} >Process Tetramer Data</Button>
-            
+
         </form>
     );
 }

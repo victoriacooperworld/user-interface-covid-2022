@@ -1,9 +1,11 @@
 from distutils.command import upload
 import os
 from src.GenerateDB import HumanDB 
+from src import MannWhitneyUTest 
 from flask import Flask, request, jsonify, make_response, send_file
 from flask_cors import CORS, cross_origin
 import shutil, os
+import zipfile
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -12,7 +14,7 @@ def ClrDirectory(folder):
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
         try:
-            if filename.endswith('.fna'):
+            if filename.endswith('.fna') or filename.endswith('.txt'):
                 os.remove(file_path)
             else:
                 continue
@@ -43,27 +45,37 @@ def ProcessData():
     return jsonify("Hi")
 
 
+ 
 
 
-
-def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2):
+def ProcessPatientData(uploads_dir1, uploads_dir2, file_list_1, file_list_2, heapSize, positionsDifference, selectedDB, 
+returnPearson=False,cutoffValue = 2, qCutoff = 0.01, topHits = 20):
     ###PLACEHOLDER TEST CODE
-    
-    return ""
+    sigTetsTop20Pos, sigTetsTop20Neg, volcanoPlot = MannWhitneyUTest.getSigTets(uploads_dir1, uploads_dir2, cutoff=2, qCutoff=qCutoff, topHits=topHits )
+    outPath = r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFilePos.csv"
+    outPath1 = r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\DictFileNeg.csv"
+    ret = HumanDB.check(sigTetsTop20Pos, heapSize, positionsDifference, selectedDB, outPath)
+    ret1 = HumanDB.check(sigTetsTop20Neg, heapSize, positionsDifference, selectedDB, outPath1)
+    list_files = [ret,ret1,volcanoPlot]
+    with zipfile.ZipFile(r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\outZip.zip", 'w') as zipF:
+        for file in list_files:
+            zipF.write(file,arcname = os.path.basename(file), compress_type=zipfile.ZIP_DEFLATED)
+    return r"C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\outZip.zip"
     ###
 
 
-def ProcessTetramerData(uploaded_file1_Path, heapSize, positionsDifference, selectedDB, returnPearson = False):
+def ProcessTetramerData(uploaded_file1_Path, heapSize, positionsDifference, selectedDB, 
+returnPearson=False):
 
-    ###PLACEHOLDER TEST CODE
+
     print(uploaded_file1_Path)
     filePath1 = uploaded_file1_Path
     print("Filepath 1 is", filePath1)
-
-    ret1 = HumanDB.check(filePath1, heapSize, positionsDifference, selectedDB)
+    outPath = r'C:\Users\User\Desktop\user-interface-covid-2022\server\OutputFiles\SigProteins.csv'
+    ret1 = HumanDB.check(filePath1, heapSize, positionsDifference, selectedDB,outPath)
     print('Ret is', ret1)
     return ret1
-    
+
 
 @app.route("/Uploads", methods=['POST'])
 @cross_origin()
@@ -85,14 +97,23 @@ def uploadPatients():
     print("Upload function called, uploading ", len(uploaded_files2), " negative to server")
     print("Saving in ", uploads_dir1)
     print("Saving in ", uploads_dir2)
-    
     for file in uploaded_files1:
+        # print(file)
         # print("Going to ", os.path.join(uploads_dir1, file.filename.split('/')[1]))
-        file.save(os.path.join(uploads_dir1, file.filename.split('/')[1]))
+        file.save(os.path.join(uploads_dir1, file.filename))
     for file in uploaded_files2:
-        file.save(os.path.join(uploads_dir2, file.filename.split('/')[1]))
-    
-    returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2) #a path
+        file.save(os.path.join(uploads_dir2, file.filename))
+    heapSize =              int(request.form.get("HeapSize"))
+    positionDiff =          int(request.form.get("PositionDifference"))
+    selectedDB =            request.form.get("DB")
+    returnPearson =         bool(int(request.form.get('ReturnPearson'))) 
+    cutoffValue =           int(request.form.get("CutoffValue"))
+    qCutoff =               float(request.form.get("QCutoffValue"))
+    numTopHits =            int(request.form.get("NumTopHits"))
+
+    returnFile = ProcessPatientData(uploads_dir1, uploads_dir2, uploaded_files1, uploaded_files2, heapSize, positionDiff, 
+    selectedDB, returnPearson = returnPearson, cutoffValue=cutoffValue, qCutoff= qCutoff, topHits=numTopHits ) #a path
+
     returnResponse = make_response(send_file(returnFile))
     return returnResponse
 
@@ -116,13 +137,16 @@ def uploadTet():
     print("Saving in ", uploads_dir1)
     positionDiff = int(request.form.get("PositionDifference"))
     heapSize = int(request.form.get('HeapSize'))
+    selectedDB =            request.form.get("DB")
+    returnPearson =         bool(int(request.form.get('ReturnPearson'))) 
+
 
     print("Position difference is ", positionDiff)
     print("Heap size is ", heapSize)
     print("Saving at ",os.path.join(uploads_dir1, uploaded_file1.filename))
     uploaded_file1.save(os.path.join(uploads_dir1, uploaded_file1.filename))
     uploaded_file1_Path = os.path.join(uploads_dir1, uploaded_file1.filename)
-    returnFile = ProcessTetramerData(uploaded_file1_Path,  heapSize, positionDiff, selectedDB, returnPearson)
+    returnFile = ProcessTetramerData(uploaded_file1_Path,  heapSize, positionDiff, selectedDB, returnPearson = returnPearson)
     returnResponse = make_response(send_file(returnFile))
 
     return returnResponse

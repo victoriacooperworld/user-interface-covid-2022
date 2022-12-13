@@ -68,12 +68,14 @@ class Input:
         # print(sequences)
         return sequences
 
-
+    """
+    Read one file from patient like  'AD_100_R1_complete.txt'
+    """
     def readOneFNAFile(self, path) -> list :
         sequences = []
-        
+        print(path)
         # print(self.controlDict)
-        with open(path,'r') as f:
+        with open(os.path,'r') as f:
             while True:
                 p = 1
                 header = f.readline()
@@ -85,7 +87,7 @@ class Input:
                 for aminoAcid in sequence:
                     p *= self.controlDict[aminoAcid]
                 sequences.append([sequence,freq, p])
-        # print(sequences)
+        print(sequences)
         return sequences
 
 
